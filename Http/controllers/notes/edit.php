@@ -6,7 +6,7 @@ use Core\Validator;
 
 $db = App::resolve(Database::class);
 
-$currentUserId = 14;
+$currentUserId = 1;
 
 $id = $_GET["id"];
 

@@ -7,7 +7,7 @@ use Core\Validator;
 $db = App::resolve(Database::class);
 $erros = [];
 
-$currentUserId = 14;
+$currentUserId = 1;
 
 $note = $db->query("SELECT * FROM notes WHERE id = :id", ["id" => $_POST["id"]])->findOrFail();
 

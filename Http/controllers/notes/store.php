@@ -14,7 +14,7 @@ if (! Validator::string($_POST["body"], 10, 255)) {
 if (empty($erros)) {
     $db->query("INSERT INTO notes(body, user_id) VALUES (:body, :user_id)", [
         "body" => $_POST["body"],
-        "user_id" => 14
+        "user_id" => 1
     ]);
 
     header("location: /notes");
