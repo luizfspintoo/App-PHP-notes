@@ -1,0 +1,29 @@
+-- nome banco de dados:  myapp
+
+-- tabela notes
+CREATE TABLE `notes` (
+	`id` INT(10) NOT NULL AUTO_INCREMENT,
+	`body` VARCHAR(255) NOT NULL DEFAULT '0' COLLATE 'utf8mb4_0900_ai_ci',
+	`user_id` INT(10) NOT NULL,
+	PRIMARY KEY (`id`) USING BTREE,
+	INDEX `FK1` (`user_id`) USING BTREE,
+	CONSTRAINT `FK1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON UPDATE NO ACTION ON DELETE CASCADE
+)
+COLLATE='utf8mb4_0900_ai_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=20
+;
+
+
+-- tabela users
+CREATE TABLE `users` (
+	`id` INT(10) NOT NULL AUTO_INCREMENT,
+	`password` VARCHAR(100) NOT NULL DEFAULT '0' COLLATE 'utf8mb4_0900_ai_ci',
+	`email` VARCHAR(100) NOT NULL DEFAULT '0' COLLATE 'utf8mb4_0900_ai_ci',
+	PRIMARY KEY (`id`) USING BTREE,
+	UNIQUE INDEX `email` (`email`) USING BTREE
+)
+COLLATE='utf8mb4_0900_ai_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=16
+;
