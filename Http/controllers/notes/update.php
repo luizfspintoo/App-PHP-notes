@@ -30,6 +30,5 @@ $db->query("UPDATE notes SET body = :body WHERE id = :id", [
     "body" => $_POST["body"]
 ]);
 
-header("location: /notes");
-die();
+redirect("/notes");
 

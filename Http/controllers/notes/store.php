@@ -8,7 +8,7 @@ $db = App::resolve(Database::class);
 $erros = [];
 
 if (! Validator::string($_POST["body"], 10, 255)) {
-    $erros["body"] = "Campo obrigatório, e permite 255 caracteres";
+    $erros["body"] = "Campo obrigatório, preencha acima de 10 caracteres";
 }
 
 if (empty($erros)) {
@@ -17,7 +17,7 @@ if (empty($erros)) {
         "user_id" => 1
     ]);
 
-    header("location: /notes");
+    redirect("/notes");
 }
 
 view("notes/create.view.php", [
