@@ -41,7 +41,7 @@
 
                 <p class="mt-10 text-center text-sm text-gray-500">
                     Não possui uma conta?
-                    <a href="#" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Crie a sua aqui</a>
+                    <a href="/register" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Crie a sua aqui</a>
                 </p>
             </div>
         </div>

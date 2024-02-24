@@ -43,7 +43,7 @@
 
                 <p class="mt-10 text-center text-sm text-gray-500">
                     Já possui uma conta?
-                    <a href="#" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Faça seu login aqui</a>
+                    <a href="/login" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Faça seu login aqui</a>
                 </p>
             </div>
         </div>
