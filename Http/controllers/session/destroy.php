@@ -1,8 +1,6 @@
 <?php
 
-use Core\Authenticator;
+use Core\Session;
 
-$logout = new Authenticator();
-$logout->logout();
-
+Session::destroy();
 redirect("/");

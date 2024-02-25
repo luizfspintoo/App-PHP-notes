@@ -28,4 +28,19 @@ class Session
     {
         unset($_SESSION["_flashed"]);
     }
+
+    public static function flush()
+    {
+        $_SESSION = [];
+    }
+
+    public static function destroy()
+
+    {
+        static::flush();
+        session_destroy();
+
+        $parameters = session_get_cookie_params();
+        setcookie("PHPSESSID", "", time() - 3600, $parameters["path"], $parameters["domain"], $parameters["secure"], $parameters["httponly"]);
+    }
 }
