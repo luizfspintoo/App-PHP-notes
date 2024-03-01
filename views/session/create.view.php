@@ -9,6 +9,11 @@
 
             <header>
                 <h2>Note<span>Sync</span></h2>
+
+                <a href="/" class="back">
+					<img src="/images/arrow-back.svg" alt=""> 
+					Home
+				</a>
             </header>
 
             <main>

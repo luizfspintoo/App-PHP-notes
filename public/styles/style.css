@@ -17,6 +17,10 @@ body {
   color: white;
 }
 
+header img {
+  width: 2rem;
+}
+
 p.erro-message {
   margin: 1rem 0;
   color: rgb(255, 38, 38);
@@ -55,6 +59,31 @@ p.erro-message {
 #page > * {
   width: 50%;
   object-fit: cover;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .back {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: white;
+
+  border: 1px solid #232323;
+  background-color: #121214;
+  padding: 0.7rem 1rem;
+  border-radius: 1rem;
+
+  transition: 0.3s;
+}
+
+header .back:hover{
+  background-color: #232323;
 }
 
 header h2 {
@@ -145,6 +174,8 @@ input:focus {
   padding: 1.6rem;
   border-radius: 1rem;
   width: 100%;
+
+  transition: 0.3s;
 }
 
 .help:hover {
