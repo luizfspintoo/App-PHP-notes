@@ -7,9 +7,9 @@ NoteSync é um aplicativo de notas que permite aos usuários criar e gerenciar s
 
 ## Funcionalidades 🚀
 
-- **Autenticação de Usuário:** Os usuários podem criar uma conta e fazer login para acessar suas notas.
-- **Criação de Notas:** Com o login autenticado, os usuários podem criar, editar e excluir suas notas.
-- **Interface Intuitiva:** Design simples e amigável para facilitar a experiência do usuário.
+:white_check_mark: **Autenticação de Usuário:** Os usuários podem criar uma conta e fazer login para acessar suas notas.<br>
+:white_check_mark: **Criação de Notas:** Com o login autenticado, os usuários podem criar, editar e excluir suas notas.<br>
+:white_check_mark: **Interface Intuitiva:** Design simples e amigável para facilitar a experiência do usuário.<br>
 
 ## Como Usar 🛠️
 
@@ -56,6 +56,14 @@ return [
 
 - Este projeto ainda está em desenvolvimento.
 - Sinta-se à vontade para relatar problemas ou sugerir melhorias.
+
+
+## Próximos Passos
+- [ ] Funcionalidade de edição da conta do usuário.
+- [ ] Aprimoramento da página de Dashboard, com designer moderno e intuitivo.
+- [ ] Desenvolvimento de uma nova página Home, com mais detalhes sobre a aplicação.
+
+
 
 
 
