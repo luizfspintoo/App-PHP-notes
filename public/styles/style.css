@@ -1,0 +1,222 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: #09090A;
+  color: white;
+}
+
+p.erro-message {
+  margin: 1rem 0;
+  color: rgb(255, 38, 38);
+}
+
+.eye {
+  position: absolute;
+  top: 50%;
+  right: 3%;
+  width: 2rem;
+  height: 2rem;
+
+  display: none;
+}
+
+.hide {
+  display: block;
+}
+
+#page {
+  height: 100vh;
+}
+
+#page > div {
+  padding: 0rem 11rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+#page > * {
+  width: 50%;
+  object-fit: cover;
+}
+
+header h2 {
+  color: white;
+  font-size: 2.7rem;
+}
+
+header span {
+  color: #a68fdc;
+  font-size: 2.7rem;
+}
+
+main {
+  margin-top: 6rem;
+}
+
+form {
+  margin-top: 3rem;
+}
+
+.headline {
+  max-width: 35rem;
+}
+
+.headline p {
+  margin-top: 1rem;
+}
+
+form input {
+  background-color: #121214;
+  padding: 1.6rem 1.2rem;
+  width: 100%;
+  border-radius: 1rem;
+  margin-top: 0.4rem;
+  color: white;
+  border: 2px solid #121214;
+  font-size: 1.6rem;
+}
+
+button {
+  margin-top: 2rem;
+  border: 0;
+  padding: 1.6rem 2rem;
+  width: 100%;
+  background-color: #7b4ee4;
+  color: white;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #7049ca;
+  cursor: pointer;
+}
+
+form .input-wrapper + .input-wrapper {
+  margin-top: 1.6rem;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.label-wrapper {
+  justify-content: space-between;
+}
+
+.label-wrapper a {
+  text-decoration: none;
+  color: #a68fdc;
+}
+
+.label-wrapper a:hover, .help a:hover {
+  text-decoration: underline;
+  color: #a68fdc;
+}
+
+input:focus {
+  border: 2px solid #a68fdc;
+  outline: none;
+}
+
+.help {
+  border: 1px solid #232323;
+  margin-top: 4rem;
+  background-color: #121214;
+  padding: 1.6rem;
+  border-radius: 1rem;
+  width: 100%;
+}
+
+.help:hover {
+  background-color: #232323;
+}
+
+.help a {
+  margin-top: 1rem;
+  display: inline-block;
+  margin-left: 2.6rem;
+  text-decoration: none;
+  color: #a68fdc;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Aplicando a animação aos elementos desejados */
+.fadeIn {
+  animation: fadeIn 0.7s;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 800px) {
+  #page > * {
+    width: 100%;
+  }
+
+  .flex {
+    display: block;
+  }
+
+  #page img {
+    display: none;
+  }
+
+  #page > div {
+    padding: 4rem 11rem;
+  }
+
+  form button {
+    margin-top: 2rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #page > * {
+    width: 100%;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  #page img {
+    display: none;
+  }
+
+  #page > div {
+    padding: 10rem 3rem;
+  }
+
+  form button {
+    margin-top: 2rem;
+  }
+}
