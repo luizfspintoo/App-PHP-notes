@@ -62,6 +62,7 @@ return [
 - [ ] Funcionalidade de edição da conta do usuário.
 - [ ] Aprimoramento da página de Dashboard, com designer moderno e intuitivo.
 - [ ] Desenvolvimento de uma nova página Home, com mais detalhes sobre a aplicação.
+- [ ] Desenvolvimento da página de Login e Registro com novo designer.
 
 
 
