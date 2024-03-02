@@ -1,0 +1,214 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: #121214;
+  /* background-color: #09090A; */
+  color: white;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  min-height: 100vh;
+}
+
+main .inner {
+  height: 100%;
+  background-color: #09090A;
+  border-top-left-radius: 2rem;
+
+  padding: 3rem;
+}
+
+main {
+  margin-top: 1rem;
+}
+
+
+
+nav {
+  padding: 3.7rem 8rem 0 3.5rem;
+  min-width: 12rem;
+}
+
+ul {
+  margin-top: 5rem;
+
+  list-style: none;
+  display: grid;
+  gap: 4rem;
+
+  max-width: 12rem;
+}
+
+ul a {
+  text-decoration: none;
+}
+
+li a {
+  color: white;
+  display: flex;
+  gap: 2rem;
+
+  font-size: 1.7rem;
+  font-weight: 500;
+
+  transition: 0.4s;
+}
+
+a:hover {
+  color: #a68fdc;
+  font-size: 1.8rem;
+}
+
+span {
+  color: #a68fdc;
+  ;
+}
+
+section.title-avatar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+
+}
+
+.title-avatar div {
+  display: flex;
+  align-items: end;
+  gap: 1rem;
+}
+
+.title-avatar img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+section.filter {
+  margin-top: 3rem;
+
+  padding: 0 2.3rem;
+
+  display: flex;
+  gap: 2rem;
+}
+
+.filter button {
+  padding: 0.8rem 2rem;
+  background-color: #a68fdc;
+  border: none;
+  border-radius: 0.7rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  cursor: pointer;
+}
+
+.filter span {
+  color: white;
+  font-size: 1.6rem;
+  text-shadow: 1px 1px 2px #4d4d4d;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #121214;
+
+  padding: 0.7rem 2rem;
+
+  border-radius: 0.7rem;
+  flex: 1;
+}
+
+.filter ion-icon {
+  font-size: 2rem;
+}
+
+.input-wrapper input {
+  border: 0;
+  width: 100%;
+  outline: 0;
+  background-color: transparent;
+  color: white;
+  font-size: 1.6rem;
+}
+
+.input-wrapper:has(input:focus) {
+  outline: 1px solid #a68fdc;
+}
+
+section.cards {
+  margin-top: 3rem;
+  padding: 0 2.3rem;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  padding: 1.5rem;
+  background-color: #121214;
+  border-radius: 0.8rem;
+  border: 1px solid #ccc;
+  width: 32%;
+  min-height: 32%;
+  max-height: 32%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  border: 1px solid #a68fdc;
+  background-color: #09090A;
+}
+
+section .card p {
+  margin: 2rem 0;
+  color: #dddddd;
+}
+
+
+section .card .tags {
+  display: flex;
+  gap: 1rem;
+}
+
+section .card .tags span {
+  background-color: #a68fdc;
+  padding: 0.4rem 0.8rem;
+  border-radius: 1.2rem;
+  color: #412b73;
+  font-size: 1.2rem;
+}
+
+form button {
+  border: 0;
+  background-color: transparent;
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+li {
+  display: flex;
+  gap: 2rem;
+}

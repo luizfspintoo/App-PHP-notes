@@ -11,7 +11,8 @@ $form = new LoginForm();
 
 if ($form->validate($email, $password)) {
     if((new Authenticator)->attempt($email, $password)) {
-        redirect("/");
+        sleep(2);
+        redirect("/dashboard");
     } else {
         $form->erro("email", "Email ou senha estão incorretos");
     }
