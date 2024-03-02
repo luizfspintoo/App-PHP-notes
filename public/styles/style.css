@@ -15,6 +15,8 @@ body {
   font-size: 1.6rem;
   background-color: #09090A;
   color: white;
+
+  overflow-x: hidden;
 }
 
 header img {
@@ -25,6 +27,7 @@ p.erro-message {
   margin: 1rem 0;
   color: rgb(255, 38, 38);
 }
+
 
 .eye {
   position: absolute;

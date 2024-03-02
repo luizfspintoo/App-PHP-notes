@@ -3,4 +3,5 @@
 use Core\Session;
 
 Session::destroy();
-redirect("/");
+sleep(2);
+redirect("/login");

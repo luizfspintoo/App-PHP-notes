@@ -23,7 +23,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="/account">
                         <ion-icon name="settings-outline"></ion-icon>
                         Minha Conta
                     </a>
@@ -76,44 +76,33 @@
                     <ion-icon name="reorder-three-outline"></ion-icon>
                 </button>
                 <section class="title-avatar">
-                    <h1>Minhas anotações ✒️</h1>
+                    <h1>Minha conta</h1>
 
                     <div>
-                        Bem vindo, <span>Luiz</span>
                         <img src="/images/avatar.svg">
                     </div>
                 </section>
 
                 <section class="filter">
-                    <a href="/notes/create">
-                        <button>
-                            <ion-icon name="add-outline"></ion-icon>
-                            <span>Criar Anotação</span>
-                        </button>
-                    </a>
-
-                    <div class="input-wrapper">
-                        <ion-icon name="search-outline"></ion-icon>
-                        <input type="text" placeholder="Pesquise sua anotação aqui">
-                    </div>
+                    <h2>informações da Conta</h2>
                 </section>
-
-                <section class="cards">
-                    <?php if (empty($notes)) : ?>    
-                            <img src="/images/create.svg">
-                    <?php else : ?>
-                        <?php foreach ($notes as $note) : ?>
-                            <?php if (strlen($note["body"]) > 0) : ?>
-                                <a class="card" href="/note?id=<?= $note["id"] ?>">
-                                    <div>
-                                        <p><?= $note['body']; ?></p>
-                                    </div>
-                                </a>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
-
-                </section>
+                    
+                <form action="">
+                    <section class="cards account">
+                        <div class="my-account">
+                            <label for="">E-mail</label>
+                            <div>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="">Senha</label>
+                            <div>
+                                <input type="text">
+                            </div>
+                        </div>
+                    </section>
+                </form>
             </div>
         </main>
     </div>

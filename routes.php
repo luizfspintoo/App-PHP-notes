@@ -33,6 +33,9 @@ $router->delete("/session", "session/destroy.php");
 //rota dashboard
 $router->get("/dashboard", "dashboard.php")->only("auth");
 
+//rota conta do usuario
+$router->get("/account", "account/index.php")->only("auth");
+
 
 
 

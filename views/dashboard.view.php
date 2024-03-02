@@ -1,4 +1,4 @@
-<?php require("partials/dashboard/head.php"); ?>
+<?php require base_path("views/partials/dashboard/head.php"); ?>
 
 <body>
     <div id="app">
@@ -6,31 +6,26 @@
 
             <div class="logo">
                 <h1>Note<span>Sync</span></h1>
-            </div>
 
+
+            </div>
             <ul>
                 <li>
-                    <a href="">
+                    <a href="/dashboard">
                         <ion-icon name="home-outline"></ion-icon>
                         Dashboard
                     </a>
                 </li>
                 <li>
-                    <a href="">
-                        <ion-icon name="people-outline"></ion-icon>
-                        Usuarios
-                    </a>
-                </li>
-                <li>
-                    <a href="">
+                    <a href="/notes">
                         <ion-icon name="document-text-outline"></ion-icon>
-                        Conteúdo
+                        Anotações
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <ion-icon name="construct-outline"></ion-icon>
-                        Configurações
+                        <ion-icon name="settings-outline"></ion-icon>
+                        Minha Conta
                     </a>
                 </li>
                 <li>
@@ -75,12 +70,15 @@
             </ul>
         </nav>
         <main>
+
             <div class="inner">
+                <button class="toggle-btn">
+                    <ion-icon name="reorder-three-outline"></ion-icon>
+                </button>
                 <section class="title-avatar">
-                    <h1>Minhas anotações ✒️</h1>
+                    <h1>Olá, Luiz</h1>
 
                     <div>
-                        Bem vindo, <span>Luiz</span>
                         <img src="/images/avatar.svg">
                     </div>
                 </section>
@@ -99,58 +97,44 @@
 
                 <section class="cards">
                     <div class="card">
-                        <h3>Título Anotação 🚩</h3>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, sunt! Neque dolores quasi, beatae sed alias</p>
-                        <div class="tags">
-                            <span>Teste</span>
-                            <span>Teste</span>
-                        </div>
                     </div>
                     <div class="card">
-                        <h3>Título Anotação 🚩</h3>
+
                         <p>A vastidão do universo revela-se em cada centelha cósmica, </p>
-                        <div class="tags">
-                            <span>Teste</span>
-                            <span>Teste</span>
-                        </div>
                     </div>
                     <div class="card">
-                        <h3>Título Anotação 🚩</h3>
+
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, sunt! Neque dolores quasi, beatae sed alias</p>
-                        <div class="tags">
-                            <span>Teste</span>
-                            <span>Teste</span>
-                        </div>
                     </div>
                     <div class="card">
-                        <h3>Título Anotação 🚩</h3>
+
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, sunt! Neque dolores quasi, beatae sed alias</p>
-                        <div class="tags">
-                            <span>Teste</span>
-                            <span>Teste</span>
-                        </div>
                     </div>
                     <div class="card">
-                        <h3>Título Anotação 🚩</h3>
+
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, sunt! Neque dolores quasi, beatae sed alias</p>
-                        <div class="tags">
-                            <span>Teste</span>
-                            <span>Teste</span>
-                        </div>
                     </div>
                     <div class="card">
-                        <h3>Título Anotação 🚩</h3>
+
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, sunt! Neque dolores quasi, beatae sed alias</p>
-                        <div class="tags">
-                            <span>Teste</span>
-                            <span>Teste</span>
-                        </div>
                     </div>
                 </section>
             </div>
         </main>
     </div>
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const nav = document.querySelector('nav');
+            const toggleBtn = document.querySelector('.toggle-btn');
+
+            toggleBtn.addEventListener('click', function() {
+                nav.classList.toggle('show');
+            });
+        });
+    </script>
+
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

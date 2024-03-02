@@ -16,12 +16,19 @@ body {
   background-color: #121214;
   /* background-color: #09090A; */
   color: white;
+
+  overflow-x: hidden;
 }
 
 #app {
   display: grid;
   grid-template-columns: max-content 1fr;
   min-height: 100vh;
+}
+
+/*Logo*/
+.logo span {
+    color: #a68fdc;
 }
 
 main .inner {
@@ -36,21 +43,18 @@ main {
   margin-top: 1rem;
 }
 
-
-
+/*Menu - Sidebar*/
 nav {
   padding: 3.7rem 8rem 0 3.5rem;
-  min-width: 12rem;
+  min-width: 13rem;
 }
 
 ul {
   margin-top: 5rem;
-
   list-style: none;
   display: grid;
   gap: 4rem;
-
-  max-width: 12rem;
+  max-width: 13rem;
 }
 
 ul a {
@@ -66,24 +70,19 @@ li a {
   font-weight: 500;
 
   transition: 0.4s;
+  
 }
 
 a:hover {
   color: #a68fdc;
-  font-size: 1.8rem;
 }
 
-span {
-  color: #a68fdc;
-  ;
-}
-
+/*Avatar*/
 section.title-avatar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
-
 }
 
 .title-avatar div {
@@ -98,25 +97,28 @@ section.title-avatar {
   border-radius: 50%;
 }
 
+/*Filtro - Pesquisar*/
+
 section.filter {
   margin-top: 3rem;
-
   padding: 0 2.3rem;
-
   display: flex;
   gap: 2rem;
 }
 
+.filter a {
+  text-decoration: none;
+}
+
 .filter button {
   padding: 0.8rem 2rem;
-  background-color: #a68fdc;
+  background-color: #7b4ee4;
   border: none;
   border-radius: 0.7rem;
   color: white;
   display: flex;
   align-items: center;
   gap: 1rem;
-
   cursor: pointer;
 }
 
@@ -126,14 +128,13 @@ section.filter {
   text-shadow: 1px 1px 2px #4d4d4d;
 }
 
+/*Campo de pesquisa*/
 .input-wrapper {
   display: flex;
   align-items: center;
   gap: 1rem;
   background-color: #121214;
-
   padding: 0.7rem 2rem;
-
   border-radius: 0.7rem;
   flex: 1;
 }
@@ -155,12 +156,47 @@ section.filter {
   outline: 1px solid #a68fdc;
 }
 
+/*Cards*/
 section.cards {
   margin-top: 3rem;
   padding: 0 2.3rem;
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
+}
+
+form input {
+  background-color: #121214;
+  padding: 1.6rem 1.2rem;
+  width: 100%;
+  border-radius: 1rem;
+  margin-top: 0.4rem;
+  color: white;
+  border: 2px solid #121214;
+  font-size: 1.6rem;
+}
+
+.action {
+
+    border: 1px solid #232323;
+    margin-top: 4rem;
+    background-color: #121214;
+    padding: 1.6rem;
+    border-radius: 1rem;
+    width: 100%;
+  
+    transition: 0.3s;
+}
+  
+  .action:hover {
+    background-color: #232323;
+  }
+
+
+.cards img {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 40%;
 }
 
 .card {
@@ -172,32 +208,49 @@ section.cards {
   min-height: 32%;
   max-height: 32%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 .card:hover {
   transform: scale(1.05);
   border: 1px solid #a68fdc;
-  background-color: #09090A;
+  background-color: #121214;
+}
+
+.card .back {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: white;
+}
+
+.card .back footer a, .card .back form button, .back a, .back button{
+  border: 1px solid #232323;
+  background-color: #121214;
+  padding: 0.7rem 1rem;
+  border-radius: 1rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.card .back footer a:hover, .card .back form button:hover, .back a:hover, .back button:hover {
+  background-color: #232323;
+}
+
+.card ion-icon {
+  color: #a68fdc;
 }
 
 section .card p {
   margin: 2rem 0;
   color: #dddddd;
-}
-
-
-section .card .tags {
-  display: flex;
-  gap: 1rem;
-}
-
-section .card .tags span {
-  background-color: #a68fdc;
-  padding: 0.4rem 0.8rem;
-  border-radius: 1.2rem;
-  color: #412b73;
-  font-size: 1.2rem;
 }
 
 form button {
@@ -211,4 +264,61 @@ form button {
 li {
   display: flex;
   gap: 2rem;
+}
+
+.cards a {
+  text-decoration: none;
+}
+
+
+/* regras de mídia */
+@media screen and (max-width: 1024px) {
+  nav {
+    margin-left: -50rem;
+    transition: margin-left 0.5s ease-in-out;
+  }
+
+  nav.show {
+    margin-left: 0;
+  }
+
+  main .inner .toggle-btn {
+    display: block;
+  }
+
+  section.cards {
+    flex-direction: column;
+  }
+
+  .cards .card {
+    width: 100%;
+  }
+}
+
+/* Adicione estas regras para o botão de toggle */
+.toggle-btn {
+  display: none;
+  cursor: pointer;
+  font-size: 3rem;
+  border: none;
+  background-color: transparent;
+  color: white;
+  padding: 0 2rem;
+}
+
+textarea {
+  border: none;
+  width: 100%;
+  background-color: transparent;
+  margin: 1rem 0;
+  border: 1px solid #a68fdc;
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+  color: white;
+}
+
+/*Mensagem de erro*/
+.cards .card .erro-message {
+  margin: 1rem 0;
+  color: rgb(255, 38, 38);
 }
