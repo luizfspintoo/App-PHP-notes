@@ -68,7 +68,8 @@
             border-radius: 3px;
         }
 
-        a.cta:hover, .btn-button:hover {
+        a.cta:hover,
+        .btn-button:hover {
             background-color: #6a5acd;
         }
 
@@ -82,6 +83,14 @@
             background-color: #6a5acd;
             border: 1px solid #7b4ee4;
         }
+
+        .hero {
+            opacity: 0;
+            /* Inicialmente definido como invisível */
+            animation: fadeIn 1.5s ease-in-out forwards;
+            /* Animação de entrada */
+        }
+
 
         .hero,
         .about {
@@ -117,6 +126,20 @@
         img {
             width: 55%;
             border-radius: 3px;
+        }
+
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+                /* Pode ajustar a animação de transição aqui */
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
