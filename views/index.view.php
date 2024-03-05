@@ -87,7 +87,7 @@
         .hero {
             opacity: 0;
             /* Inicialmente definido como invisível */
-            animation: fadeIn 1.5s ease-in-out forwards;
+            animation: fadeIn 1s ease-in-out forwards;
             /* Animação de entrada */
         }
 
