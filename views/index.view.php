@@ -141,6 +141,12 @@
                 transform: translateY(0);
             }
         }
+
+        .gradiente-text {
+            background: linear-gradient(to right, #7b4ee4, #5834ad);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
     </style>
 </head>
 
@@ -171,7 +177,7 @@
     <section class="container">
         <div class="hero">
             <div>
-                <h1>NoteSync seu novo App de anotações</h1>
+                <h1><span>NoteSync</span class="gradient-text"> seu novo App de <span class="gradient-text">anotações</span></h1>
                 <p class="hero-paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia doloribus nulla maiores repellat similique quas harum? Ut sit eveniet explicabo excepturi. Error quia minima dolorem sequi, id dolor excepturi corrupti!</p>
                 <a href="" class="btn-button">Inscreva-se agora e crie suas ideias</a>
             </div>
