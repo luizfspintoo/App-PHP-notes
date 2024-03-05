@@ -1,58 +1,172 @@
-<?php require("partials/head.php"); ?>
-<?php require("partials/nav.php"); ?>
+<!DOCTYPE html>
+<html lang="pt-br">
 
-<main>
-    <div class="w-100">
-        <div class="relative overflow-hidden bg-white">
-            <div class="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pt-40">
-                <div class="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
-                    <div class="sm:max-w-lg">
-                        <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">NoteSync seu novo App de anotações</h1>
-                        <p class="mt-4 text-xl text-gray-500">Suas ideias, sempre sincronizadas. Onde quer que você vá, suas anotações estão lá com você.</p>
-                    </div>
-                    <div>
-                        <div class="mt-10">
-                            <!-- Decorative image grid -->
-                            <div aria-hidden="true" class="pointer-events-none lg:absolute lg:inset-y-0 lg:mx-auto lg:w-full lg:max-w-7xl">
-                                <div class="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
-                                    <div class="flex items-center space-x-6 lg:space-x-8">
-                                        <div class="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-                                            <div class="h-64 w-44 overflow-hidden rounded-lg sm:opacity-0 lg:opacity-100">
-                                                <img src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="h-full w-full object-cover object-center">
-                                            </div>
-                                            <div class="h-64 w-44 overflow-hidden rounded-lg">
-                                                <img src="https://images.unsplash.com/flagged/photo-1574164908900-6275ca361157?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="h-full w-full object-cover object-center">
-                                            </div>
-                                        </div>
-                                        <div class="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-                                            <div class="h-64 w-44 overflow-hidden rounded-lg">
-                                                <img src="https://images.unsplash.com/photo-1536300099515-6c61b290b654?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="h-full w-full object-cover object-center">
-                                            </div>
-                                            <div class="h-64 w-44 overflow-hidden rounded-lg">
-                                                <img src="https://plus.unsplash.com/premium_photo-1664478066474-bf0bbed55df5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="h-full w-full object-cover object-center">
-                                            </div>
-                                            <div class="h-64 w-44 overflow-hidden rounded-lg">
-                                                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="h-full w-full object-cover object-center">
-                                            </div>
-                                        </div>
-                                        <div class="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
-                                            <div class="h-64 w-44 overflow-hidden rounded-lg">
-                                                <img src="https://plus.unsplash.com/premium_photo-1661776849166-3d27b91449bb?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="h-full w-full object-cover object-center">
-                                            </div>
-                                            <div class="h-64 w-44 overflow-hidden rounded-lg">
-                                                <img src="https://plus.unsplash.com/premium_photo-1683133490036-29146ddc3491?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="h-full w-full object-cover object-center">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <title>NoteSync</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-                            <a href="/register" class="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700">Registre-se agora</a>
-                        </div>
-                    </div>
-                </div>
+        body {
+            background-color: #09090A;
+            color: white;
+            font-family: "DM Sans", sans-serif;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        nav {
+            background-color: transparent;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(240, 240, 240, 0.2)
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-menu ul li {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        ul li {
+            padding: 10px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        a.cta {
+            padding: 10px 30px;
+            background-color: #7b4ee4;
+            border-radius: 3px;
+        }
+
+        a.cta:hover, .btn-button:hover {
+            background-color: #6a5acd;
+        }
+
+        a.cta-register {
+            border: 1px solid #7b4ee4;
+            padding: 10px 30px;
+            border-radius: 3px;
+        }
+
+        a.cta-register:hover {
+            background-color: #6a5acd;
+            border: 1px solid #7b4ee4;
+        }
+
+        .hero,
+        .about {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+            padding: 4rem 0;
+            margin-bottom: 7rem;
+        }
+
+        .hero h1,
+        .about h2 {
+            font-size: 55px;
+        }
+
+        .hero-paragraph {
+            margin: 20px 0;
+        }
+
+        .btn-button {
+            text-decoration: none;
+            border: none;
+            font-size: 14px;
+            color: white;
+            font-weight: 700;
+            background-color: #7b4ee4;
+            border-radius: 3px;
+            padding: 15px 30px;
+            display: inline-block;
+        }
+
+        img {
+            width: 55%;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+            <h2>NoteSync</h2>
+            <div class="nav-menu">
+                <ul>
+                    <li>Home</li>
+                    <li>Quem somos</li>
+                    <li>NoteSync</li>
+                    <li>Contato</li>
+                    <li>
+                        <a class="cta-register" href="/register">
+                            Registre-se
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cta" href="/login">
+                            Faça login
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </div>
-</main>
-<?php require("partials/footer.php"); ?>
+    </nav>
+    <section class="container">
+        <div class="hero">
+            <div>
+                <h1>NoteSync seu novo App de anotações</h1>
+                <p class="hero-paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia doloribus nulla maiores repellat similique quas harum? Ut sit eveniet explicabo excepturi. Error quia minima dolorem sequi, id dolor excepturi corrupti!</p>
+                <a href="" class="btn-button">Inscreva-se agora e crie suas ideias</a>
+            </div>
+
+            <img src="https://img.freepik.com/fotos-gratis/mulher-em-casa-usando-smartphone-na-frente-do-computador-enquanto-toma-cafe_23-2148793444.jpg?t=st=1709598482~exp=1709602082~hmac=0c0b3fb3e38005085ec389ea7456922a7c399c30034d9d3ac2497bdac75134aa&w=740" alt="">
+        </div>
+    </section>
+    <section class="container">
+        <div class="about">
+            <img src="https://img.freepik.com/fotos-gratis/retrato-de-grupo-de-colegas-diversos-e-felizes_93675-134770.jpg?t=st=1709604866~exp=1709608466~hmac=f3b2426a4fc1a5bcdc23ebb4a5c5b4ad3aec138ddb8faa62015ea1489443abb5&w=740" alt="">
+            <div>
+                <h2>Quem somos</h2>
+                <p class="hero-paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia doloribus nulla maiores repellat similique quas harum? Ut sit eveniet explicabo excepturi. Error quia minima dolorem sequi, id dolor excepturi corrupti!</p>
+                <a href="" class="btn-button">Inscreva-se agora e crie suas ideias</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

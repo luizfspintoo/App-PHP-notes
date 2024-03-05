@@ -101,7 +101,27 @@
                                 <input type="text">
                             </div>
                         </div>
+
+                        
                     </section>
+                    <section >
+                        <h2>informações Pessoais</h2>
+                        <div class="my-account">
+                            <label for="">E-mail</label>
+                            <div>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="">Senha</label>
+                            <div>
+                                <input type="text">
+                            </div>
+                        </div>
+
+                        
+                    </section>
+                    
                 </form>
             </div>
         </main>
