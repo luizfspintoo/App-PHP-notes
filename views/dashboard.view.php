@@ -11,13 +11,13 @@
             </div>
             <ul>
                 <li>
-                    <a href="/dashboard">
+                    <a href="/dashboard" class="<?= urlIs("/dashboard") ? "active" : "" ?> ">
                         <ion-icon name="home-outline"></ion-icon>
                         Dashboard
                     </a>
                 </li>
                 <li>
-                    <a href="/notes">
+                    <a href="/notes" class="<?= urlIs("/notes") ? "active" : "" ?> ">
                         <ion-icon name="document-text-outline"></ion-icon>
                         Anotações
                     </a>

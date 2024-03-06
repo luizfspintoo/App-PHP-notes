@@ -84,14 +84,6 @@
             border: 1px solid #7b4ee4;
         }
 
-        .hero {
-            opacity: 0;
-            /* Inicialmente definido como invisível */
-            animation: fadeIn 1s ease-in-out forwards;
-            /* Animação de entrada */
-        }
-
-
         .hero,
         .about {
             display: flex;
@@ -99,7 +91,6 @@
             justify-content: space-between;
             gap: 3rem;
             padding: 4rem 0;
-            margin-bottom: 7rem;
         }
 
         .hero h1,
@@ -128,23 +119,30 @@
             border-radius: 3px;
         }
 
+        .about {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
 
         @keyframes fadeIn {
             from {
-                opacity: 0;
-                transform: translateY(20px);
-                /* Pode ajustar a animação de transição aqui */
+                transform: translateY(-20px);
             }
 
             to {
-                opacity: 1;
                 transform: translateY(0);
             }
         }
 
         .gradient-text {
             background: linear-gradient(to right, #6a5acd, #8a2be2);
-            -webkit-background-clip: text;
+            background-clip: text;
             color: transparent;
         }
     </style>
@@ -153,7 +151,7 @@
 <body>
     <nav>
         <div class="navbar">
-            <h2>NoteSync</h2>
+            <h2>Note<span class="gradient-text">Sync</span></h2>
             <div class="nav-menu">
                 <ul>
                     <li>Home</li>
@@ -175,27 +173,58 @@
         </div>
     </nav>
     <section class="container">
-        <div class="hero">
+        <div class="hero animate-on-scroll visible">
             <div>
                 <h1><span class="gradient-text">NoteSync</span> seu novo App de <span class="gradient-text">anotações</span></h1>
-                <p class="hero-paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia doloribus nulla maiores repellat similique quas harum? Ut sit eveniet explicabo excepturi. Error quia minima dolorem sequi, id dolor excepturi corrupti!</p>
-                <a href="" class="btn-button">Inscreva-se agora e crie suas ideias</a>
+                <p class="hero-paragraph">Suas ideias não podem esperar, e com o NoteSync, elas não precisam. Bem vindo(a) a sua organização pessoal e profissional.</p>
+                <a href="/register" class="btn-button">Registre-se agora e crie suas ideias</a>
             </div>
 
             <img src="https://img.freepik.com/fotos-gratis/mulher-em-casa-usando-smartphone-na-frente-do-computador-enquanto-toma-cafe_23-2148793444.jpg?t=st=1709598482~exp=1709602082~hmac=0c0b3fb3e38005085ec389ea7456922a7c399c30034d9d3ac2497bdac75134aa&w=740" alt="">
         </div>
     </section>
     <section class="container">
-        <div class="about">
+        <div class="about animate-on-scroll">
             <img src="https://img.freepik.com/fotos-gratis/retrato-de-grupo-de-colegas-diversos-e-felizes_93675-134770.jpg?t=st=1709604866~exp=1709608466~hmac=f3b2426a4fc1a5bcdc23ebb4a5c5b4ad3aec138ddb8faa62015ea1489443abb5&w=740" alt="">
             <div>
                 <h2>Quem somos</h2>
-                <p class="hero-paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia doloribus nulla maiores repellat similique quas harum? Ut sit eveniet explicabo excepturi. Error quia minima dolorem sequi, id dolor excepturi corrupti!</p>
-                <a href="" class="btn-button">Inscreva-se agora e crie suas ideias</a>
+                <p class="hero-paragraph">Somos a NoteSync, uma equipe apaixonada dedicada a criar soluções inovadoras para simplificar a maneira como você gerencia suas ideias e tarefas diárias.</p>
+                <a href="/register" class="btn-button">Inscreva-se agora e crie suas ideias</a>
             </div>
         </div>
     </section>
 
+    <script>
+        
+
+
+
+        const hero = document.querySelector(".hero");
+const about = document.querySelector(".about");
+
+// Get the offset position of the sections
+const heroteste = hero.offsetTop;
+const aboutteste = about.offsetTop;
+
+console.log(heroteste);
+console.log(aboutteste);
+
+function myFunction() {
+  if (window.scrollY >= heroteste) {
+    hero.classList.add("visible");
+  } 
+
+  if (window.scrollY > heroteste) {
+    about.classList.add("visible");
+  } else {
+    about.classList.remove("visible");
+  }
+}
+
+window.addEventListener("scroll", myFunction);
+
+
+    </script>
 </body>
 
 </html>

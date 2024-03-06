@@ -73,6 +73,10 @@ li a {
   
 }
 
+a.active {
+  color: #a68fdc;
+}
+
 a:hover {
   color: #a68fdc;
 }
