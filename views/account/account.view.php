@@ -77,52 +77,51 @@
                 </button>
                 <section class="title-avatar">
                     <h1>Minha conta</h1>
-
+                    
                     <div>
                         <img src="/images/avatar.svg">
                     </div>
                 </section>
 
-                <section class="filter">
-                    <h2>informações da Conta</h2>
+                <section class="conta">
+                    <form action="" style="width: 400px; margin-top: 1rem;">
+                        <h2>Informações da Conta</h2>
+                        <div>
+                            <label for="#">E-mail</label><br>
+                            <input type="text">
+                        </div>
+                        <div>
+                            <label for="#">Senha</label><br>
+                            <input type="text">
+                        </div>
+
+                        <h2 style="margin-top: 3rem;">Informações Pessoais</h2>
+                        <div>
+                            <label for="#">Nome</label><br>
+                            <input type="text">
+                        </div>
+                        <div>
+                            <label for="#">Contato</label><br>
+                            <input type="text">
+                        </div>
+                    </form>
+
+                    <div class="profile">
+                        <div class="profile-content">
+                            <div>
+                            <img src="/images/avatar.svg" alt="">
+                            </div>
+                            <div>
+                                <h3>Nome</h3>
+                                <p>Luiz Felipe</p>
+                            </div>
+                            <div>
+                                <h3>Contato</h3>
+                                <p>(99) 9999-9999</p>
+                            </div>
+                        </div>
+                    </div>
                 </section>
-                    
-                <form action="">
-                    <section class="cards account">
-                        <div class="my-account">
-                            <label for="">E-mail</label>
-                            <div>
-                                <input type="text">
-                            </div>
-                        </div>
-                        <div>
-                            <label for="">Senha</label>
-                            <div>
-                                <input type="text">
-                            </div>
-                        </div>
-
-                        
-                    </section>
-                    <section >
-                        <h2>informações Pessoais</h2>
-                        <div class="my-account">
-                            <label for="">E-mail</label>
-                            <div>
-                                <input type="text">
-                            </div>
-                        </div>
-                        <div>
-                            <label for="">Senha</label>
-                            <div>
-                                <input type="text">
-                            </div>
-                        </div>
-
-                        
-                    </section>
-                    
-                </form>
             </div>
         </main>
     </div>

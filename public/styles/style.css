@@ -8,7 +8,7 @@
 
 :root {
   font-size: 62.5%;
-  font-family: "Inter", sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 
 body {
@@ -35,7 +35,6 @@ p.erro-message {
   right: 3%;
   width: 2rem;
   height: 2rem;
-
   display: none;
 }
 
@@ -47,7 +46,7 @@ p.erro-message {
   height: 100vh;
 }
 
-#page > div {
+#page>div {
   padding: 0rem 11rem;
   display: flex;
   flex-direction: column;
@@ -59,7 +58,7 @@ p.erro-message {
   display: flex;
 }
 
-#page > * {
+#page>* {
   width: 50%;
   object-fit: cover;
 }
@@ -85,7 +84,7 @@ header .back {
   transition: 0.3s;
 }
 
-header .back:hover{
+header .back:hover {
   background-color: #232323;
 }
 
@@ -143,7 +142,7 @@ button:hover {
   cursor: pointer;
 }
 
-form .input-wrapper + .input-wrapper {
+form .input-wrapper+.input-wrapper {
   margin-top: 1.6rem;
 }
 
@@ -160,7 +159,8 @@ form .input-wrapper + .input-wrapper {
   color: #a68fdc;
 }
 
-.label-wrapper a:hover, .help a:hover {
+.label-wrapper a:hover,
+.help a:hover {
   text-decoration: underline;
   color: #a68fdc;
 }
@@ -198,6 +198,7 @@ input:focus {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -212,7 +213,7 @@ input:focus {
 /* Media Queries */
 
 @media only screen and (max-width: 800px) {
-  #page > * {
+  #page>* {
     width: 100%;
   }
 
@@ -224,7 +225,7 @@ input:focus {
     display: none;
   }
 
-  #page > div {
+  #page>div {
     padding: 4rem 11rem;
   }
 
@@ -234,7 +235,7 @@ input:focus {
 }
 
 @media only screen and (max-width: 500px) {
-  #page > * {
+  #page>* {
     width: 100%;
   }
 
@@ -246,7 +247,7 @@ input:focus {
     display: none;
   }
 
-  #page > div {
+  #page>div {
     padding: 10rem 3rem;
   }
 
