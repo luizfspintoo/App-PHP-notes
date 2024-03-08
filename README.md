@@ -60,8 +60,6 @@ return [
 
 ## Próximos Passos
 - [ ] Funcionalidade de edição da conta do usuário.
-- [ ] Aprimoramento da página de Dashboard, com designer moderno e intuitivo.
-- [ ] Desenvolvimento da página de Login e Registro com novo designer.
 
 
 
