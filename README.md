@@ -20,8 +20,8 @@ NoteSync é um aplicativo de notas que permite aos usuários criar e gerenciar s
 
 ### Instalação
 
-1. Clone este repositório: `git clone https://github.com/seu-usuario/App-PHP-notes.git`
-2. Navegue até o diretório do projeto: `cd App-PHP-notes`
+1. Clone este repositório: `git clone https://github.com/seu-usuario/note-sync.git`
+2. Navegue até o diretório do projeto: `cd note-sync`
 3. Inicie seu servidor web. 
 4. Se você deseja usar o servidor PHP embutido para testar seu aplicativo, basta rodar o seguinte comando:
 
