@@ -54,5 +54,5 @@
     </div>
 </body>
 
-<script src="/scripts/index.js"></script>
+<script src="/scripts/login/index.js"></script>
 </html>

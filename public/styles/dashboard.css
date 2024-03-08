@@ -14,9 +14,7 @@
 body {
   font-size: 1.6rem;
   background-color: #121214;
-  /* background-color: #09090A; */
   color: white;
-
   overflow-x: hidden;
 }
 
@@ -35,7 +33,6 @@ main .inner {
   height: 100%;
   background-color: #09090A;
   border-top-left-radius: 2rem;
-
   padding: 3rem;
 }
 
@@ -65,20 +62,26 @@ li a {
   color: white;
   display: flex;
   gap: 2rem;
-
   font-size: 1.7rem;
   font-weight: 500;
-
   transition: 0.4s;
-  
 }
 
 a.active {
   color: #a68fdc;
 }
 
-a:hover {
+a:hover, nav form input:hover {
   color: #a68fdc;
+}
+
+/*botão de sair*/
+nav form input {
+    background: transparent;
+    border: none;
+    font-size: 1.6rem;
+    color: white;
+    cursor: pointer;
 }
 
 /*Avatar*/
@@ -96,211 +99,9 @@ section.title-avatar {
 }
 
 .title-avatar img {
-  width: 4rem;
-  height: 4rem;
+  width: 5rem;
+  height: 5rem;
   border-radius: 50%;
-}
-
-/*Filtro - Pesquisar*/
-
-.conta {
-  display: flex;
-  gap: 7rem;
-  margin-top: 3rem;
-  padding: 0 2.3rem;
-}
-
-
-.profile {
-  border: 1px solid #121214;
-  width: 50%;
-  text-align: center;
-  padding: 1rem;
-  border-radius: 0.8rem;
-}
-
-.profile img {
-  width: 20%;
-  border-radius: 50%;
-  margin: 2rem 0;
-}
-
-.profile-content {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-section.filter {
-  margin-top: 3rem;
-  padding: 0 2.3rem;
-  display: flex;
-  gap: 2rem;
-}
-
-.filter a {
-  text-decoration: none;
-}
-
-.filter button {
-  padding: 0.8rem 2rem;
-  background-color: #7b4ee4;
-  border: none;
-  border-radius: 0.7rem;
-  color: white;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  cursor: pointer;
-}
-
-.filter span {
-  color: white;
-  font-size: 1.6rem;
-  text-shadow: 1px 1px 2px #4d4d4d;
-}
-
-/*Campo de pesquisa*/
-.input-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  background-color: #121214;
-  padding: 0.7rem 2rem;
-  border-radius: 0.7rem;
-  flex: 1;
-}
-
-.filter ion-icon {
-  font-size: 2rem;
-}
-
-.input-wrapper input {
-  border: 0;
-  width: 100%;
-  outline: 0;
-  background-color: transparent;
-  color: white;
-  font-size: 1.6rem;
-}
-
-.input-wrapper:has(input:focus) {
-  outline: 1px solid #a68fdc;
-}
-
-/*Cards*/
-section.cards {
-  margin-top: 3rem;
-  padding: 0 2.3rem;
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-form input {
-  background-color: #121214;
-  padding: 1.4rem 1.2rem;
-  width: 100%;
-  border-radius: 1rem;
-  margin-top: 0.4rem;
-  color: white;
-  border: 2px solid #121214;
-  font-size: 1.6rem;
-}
-
-.action {
-
-    border: 1px solid #232323;
-    margin-top: 4rem;
-    background-color: #121214;
-    padding: 1.6rem;
-    border-radius: 1rem;
-    width: 100%;
-  
-    transition: 0.3s;
-}
-  
-  .action:hover {
-    background-color: #232323;
-  }
-
-
-.cards img {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 40%;
-}
-
-.card {
-  padding: 1.5rem;
-  background-color: #121214;
-  border-radius: 0.8rem;
-  border: 1px solid #ccc;
-  width: 32%;
-  min-height: 32%;
-  max-height: 32%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
-}
-
-.card:hover {
-  transform: scale(1.05);
-  border: 1px solid #a68fdc;
-  background-color: #121214;
-}
-
-.card .back {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  text-decoration: none;
-  color: white;
-}
-
-.card .back footer a, .card .back form button, .back a, .back button{
-  border: 1px solid #232323;
-  background-color: #121214;
-  padding: 0.7rem 1rem;
-  border-radius: 1rem;
-
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-
-  text-decoration: none;
-  color: white;
-  transition: 0.3s;
-}
-
-.card .back footer a:hover, .card .back form button:hover, .back a:hover, .back button:hover {
-  background-color: #232323;
-}
-
-.card ion-icon {
-  color: #a68fdc;
-}
-
-section .card p {
-  margin: 2rem 0;
-  color: #dddddd;
-}
-
-form button {
-  border: 0;
-  background-color: transparent;
-  color: white;
-  font-size: 1.6rem;
-  cursor: pointer;
-}
-
-li {
-  display: flex;
-  gap: 2rem;
-}
-
-.cards a {
-  text-decoration: none;
 }
 
 
@@ -318,14 +119,6 @@ li {
   main .inner .toggle-btn {
     display: block;
   }
-
-  section.cards {
-    flex-direction: column;
-  }
-
-  .cards .card {
-    width: 100%;
-  }
 }
 
 /* Adicione estas regras para o botão de toggle */
@@ -339,19 +132,3 @@ li {
   padding: 0 2rem;
 }
 
-textarea {
-  border: none;
-  width: 100%;
-  background-color: transparent;
-  margin: 1rem 0;
-  border: 1px solid #a68fdc;
-  border-radius: 0.8rem;
-  font-size: 1.6rem;
-  color: white;
-}
-
-/*Mensagem de erro*/
-.cards .card .erro-message {
-  margin: 1rem 0;
-  color: rgb(255, 38, 38);
-}

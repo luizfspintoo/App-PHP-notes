@@ -6,3 +6,4 @@ function togglePassword()
 
     password.setAttribute("type", type);
 }
+
