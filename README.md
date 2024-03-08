@@ -3,7 +3,7 @@
 NoteSync é um aplicativo de notas que permite aos usuários criar e gerenciar suas anotações de forma fácil e rápida.
 
 ## Visualização do Projeto
-
+<img src=".github/preview.png">
 
 ## Funcionalidades 🚀
 
