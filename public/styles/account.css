@@ -1,0 +1,111 @@
+body {
+    font-family: "DM Sans", sans-serif;
+}
+
+.my-account {
+    display: flex;
+    gap: 3rem;
+    margin: 2rem;
+}
+
+form {
+    width: 50%;
+}
+
+form h2 {
+    margin-bottom: 1rem;
+}
+
+form input {
+    background-color: #121214;
+    padding: 1.2rem 1.2rem;
+    width: 100%;
+    border-radius: 1rem;
+    margin-top: 0.4rem;
+    color: white;
+    border: 2px solid #121214;
+    font-size: 1.6rem;
+}
+
+form .input-wrapper+.input-wrapper {
+    margin-top: 1.6rem;
+}
+
+  .info-account {
+    margin-bottom: 2rem;
+  }
+
+  textarea {
+    background-color: #121214;
+    padding: 1.2rem 1.2rem;
+    width: 100%;
+    color: white;
+    border-radius: 1rem;
+    margin-top: 0.4rem;
+    border: 0;
+    font-size: 1.6rem;
+    border: 2px solid #121214;
+  }
+
+  input:focus, textarea:focus {
+    border: 2px solid #a68fdc;
+    outline: none;
+  }
+
+  .my-account button {
+    margin-top: 2rem;
+    border: 0;
+    padding: 1.2rem 2rem;
+    width: 40%;
+    background-color: #7b4ee4;
+    color: white;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+  
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    justify-content: center;
+  }
+
+.about-me {
+    width: 50%;
+    text-align: center;
+
+    border: 1px solid #121214;
+    border-radius: 0.8rem;
+    padding: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.about-me img {
+    width: 20%;
+    border-radius: 50%;
+}
+
+.about-me h3 {
+    margin: 1rem;
+}
+
+.about-me p {
+    width: 350px;
+    margin: 0 auto;
+}
+
+
+@media (max-width: 800px) {
+    .my-account {
+        flex-direction: column-reverse;
+        gap: 4rem;
+    }
+
+    .about-me, form {
+        width: 100%;
+    }
+
+}

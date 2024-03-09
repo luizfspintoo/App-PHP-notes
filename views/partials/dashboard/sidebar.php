@@ -21,16 +21,13 @@
                 Conta
             </a>
         </li>
-        <li>
-            <a href="#">
-                <ion-icon name="log-out-outline"></ion-icon>
-                <?php if ($_SESSION["user"] ?? false) : ?>
-                    <form action="/session" method="POST">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <input type="submit" value="Sair">
-                    </form>
-                <?php endif; ?>
-            </a>
-        </li>
     </ul>
+    <div>
+        <?php if ($_SESSION["user"] ?? false) : ?>
+            <form action="/session" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="logout">Sair</button>
+            </form>
+        <?php endif; ?>
+    </div>
 </nav>

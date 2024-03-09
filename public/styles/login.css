@@ -116,7 +116,7 @@ form {
 
 form input {
   background-color: #121214;
-  padding: 1.6rem 1.2rem;
+  padding: 1.2rem 1.2rem;
   width: 100%;
   border-radius: 1rem;
   margin-top: 0.4rem;
@@ -128,18 +128,29 @@ form input {
 button {
   margin-top: 2rem;
   border: 0;
-  padding: 1.6rem 2rem;
+  padding: 1.2rem 2rem;
   width: 100%;
   background-color: #7b4ee4;
   color: white;
   border-radius: 1rem;
   font-size: 1.5rem;
   font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  justify-content: center;
 }
 
 button:hover {
   background-color: #7049ca;
   cursor: pointer;
+}
+
+/*load button*/
+#fa {
+  display: none;
+  color: white;
 }
 
 form .input-wrapper+.input-wrapper {

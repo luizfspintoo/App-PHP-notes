@@ -75,6 +75,18 @@ a:hover, nav form input:hover {
   color: #a68fdc;
 }
 
+.logout {
+  padding: 1rem 3rem;
+  margin-top: 3rem;
+  border-radius: 0.8rem;
+  font-weight: 700;
+  border: 1px solid #a68fdc;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  width: 11rem;
+}
+
 /*botão de sair*/
 nav form input {
     background: transparent;

@@ -1,4 +1,4 @@
-<?php require base_path("views/partials/head.php"); ?>
+<?php require base_path("views/partials/login/head.php"); ?>
 
 <body>
     <div id="page" class="flex">
@@ -42,7 +42,9 @@
                         <?php endif; ?>
                     </div>
 
-                    <button type="submit">Entrar</button>
+                    <button type="submit" id="submit">
+                        <i class="fa fa-circle-o-notch fa-spin" id="fa"></i> Entrar
+                    </button>
 
                     <div class="help">
                         <p>🚀 Não possui uma conta?</p>

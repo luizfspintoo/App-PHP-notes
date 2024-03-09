@@ -7,6 +7,7 @@
 
             <div class="inner">
                 <?php require base_path("views/partials/dashboard/header.php"); ?>
+                <?php require base_path("views/partials/account/main.php"); ?>
             </div>
         </main>
     </div>
