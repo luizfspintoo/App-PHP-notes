@@ -1,0 +1,101 @@
+input {
+    background-color: #121214;
+    padding: 1.2rem 1.2rem 1.2rem 4rem;
+    border-radius: 1rem;
+    color: white;
+    border: 2px solid #121214;
+    font-size: 1.6rem;
+    width: 600px;
+  }
+
+  input:focus {
+    border: 2px solid #a68fdc;
+    outline: none;
+  }
+
+  button {
+    border: 0;
+    padding: 1.2rem 2rem;
+    width: 100%;
+    background-color: #7b4ee4;
+    color: white;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+  
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    justify-content: center;
+
+    cursor: pointer;
+  }
+
+.input-wrapper {
+  position: relative;
+}
+.input-wrapper ion-icon {
+  position: absolute;
+  top: 1.5rem;
+  left: 1rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.header {
+  flex: auto
+}
+
+.header a {
+  text-decoration: none;
+}
+
+.cards h2 {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.cards img {
+  width: 380px;
+  margin: 3rem 22%;
+}
+
+.notes {
+  margin: 4rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.note {
+  border: 1px solid #232323;
+  background-color: #121214;
+  padding: 1.6rem;
+  border-radius: 1rem;
+  overflow: hidden; 
+  width: 32%;
+}
+
+
+.note button:hover{
+  opacity: 1;
+}
+
+.note p {
+  margin: 0; 
+  word-wrap: break-word; /* Quebrar palavras para evitar estouro */
+  overflow: hidden; /* Para garantir que o texto não estoure */
+}
+
+button {
+  margin-top: 1rem; /* Adicionar espaçamento entre o parágrafo e o botão */
+}
+
+
+.note a {
+  text-decoration: none;
+}

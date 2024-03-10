@@ -21,6 +21,12 @@
                 Conta
             </a>
         </li>
+        <li>
+            <a href="/feedback" class="<?= urlIs("/feedback") ? "active" : "" ?> ">
+                <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+                Feedback
+            </a>
+        </li>
     </ul>
     <div>
         <?php if ($_SESSION["user"] ?? false) : ?>

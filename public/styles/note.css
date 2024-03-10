@@ -1,0 +1,85 @@
+.card {
+    margin: 0 2rem;
+}
+
+.erro-message {
+  background-color: #ff9898ce;
+  border: 1px solid #ff0000;
+  border-radius: 0.8rem;
+  color: #ff0000;
+  padding: 0.5rem 3rem;
+  width: 43%;
+}
+
+textarea {
+    background-color: #121214;
+    padding: 1.2rem;
+    border-radius: 1rem;
+    color: white;
+    border: 2px solid #121214;
+    font-size: 1.6rem;
+    width: 600px;
+    margin-top: 2rem;
+  }
+
+  input:focus, textarea:focus {
+    border: 2px solid #a68fdc;
+    outline: none;
+  }
+
+  button {
+    border: 0;
+    padding: 1.2rem 2rem;
+    width: 100%;
+    background-color: #7b4ee4;
+    color: white;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+  
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.buttons button {
+    width: 150px;
+}
+
+.buttons a {
+  border: 1px solid #232323;
+  background-color: #121214;
+  border-radius: 1rem;
+  border-radius: 1rem;
+  padding: 1.1rem 2rem;
+  color: #7b4ee4;
+}
+
+.buttons a {
+    text-decoration: none;
+}
+
+.note {
+  border: 1px solid #232323;
+  background-color: #121214;
+  border-radius: 1rem;
+  border-radius: 1rem;
+  padding: 1.1rem 2rem;
+  color: white;
+  max-width: 400px;
+}
+
+.note p {
+  margin: 0; 
+  word-wrap: break-word; /* Quebrar palavras para evitar estouro */
+  overflow: hidden; /* Para garantir que o texto não estoure */
+}

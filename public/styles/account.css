@@ -13,7 +13,7 @@ form {
 }
 
 form h2 {
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
 }
 
 form input {
@@ -30,10 +30,6 @@ form input {
 form .input-wrapper+.input-wrapper {
     margin-top: 1.6rem;
 }
-
-  .info-account {
-    margin-bottom: 2rem;
-  }
 
   textarea {
     background-color: #121214;

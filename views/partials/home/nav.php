@@ -1,6 +1,6 @@
 <nav id="hero">
         <div class="navbar">
-            <h2>Note<span class="gradient-text">Sync</span></h2>
+            <h2>Note<span class="text-logo">Sync</span></h2>
             <div class="nav-menu">
                 <ul>
                     <li>

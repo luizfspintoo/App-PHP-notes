@@ -26,7 +26,7 @@ body {
 
 /*Logo*/
 .logo span {
-    color: #a68fdc;
+    color: #6a5acd;
 }
 
 main .inner {
@@ -35,6 +35,7 @@ main .inner {
   border-top-left-radius: 2rem;
   padding: 3rem;
 }
+
 
 main {
   margin-top: 1rem;
@@ -68,11 +69,11 @@ li a {
 }
 
 a.active {
-  color: #a68fdc;
+  color: #6a5acd;
 }
 
 a:hover, nav form input:hover {
-  color: #a68fdc;
+  color: #6a5acd;
 }
 
 .logout {
@@ -80,7 +81,7 @@ a:hover, nav form input:hover {
   margin-top: 3rem;
   border-radius: 0.8rem;
   font-weight: 700;
-  border: 1px solid #a68fdc;
+  border: 1px solid #6a5acd;
   color: white;
   background-color: transparent;
   cursor: pointer;
@@ -104,16 +105,56 @@ section.title-avatar {
   padding: 2rem;
 }
 
-.title-avatar div {
-  display: flex;
-  align-items: end;
-  gap: 1rem;
-}
-
 .title-avatar img {
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.profile-container {
+  position: relative;
+}
+
+.profile.show {
+  display: none;
+}
+
+.profile {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 6rem;
+  left: -15rem;
+  padding: 1.3rem 1rem 0rem;
+  width: 200px;
+  justify-content: center;
+
+  border: 1px solid #232323;
+  background-color: #121214;
+  border-radius: 1rem;
+  
+  transition: 0.3s;
+}
+
+ion-icon {
+  font-size: 2rem;
+}
+
+.profile a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.profile a:hover {
+  color: #6a5acd;
+  text-decoration: none;
 }
 
 

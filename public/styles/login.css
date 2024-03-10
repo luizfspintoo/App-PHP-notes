@@ -36,6 +36,8 @@ p.erro-message {
   width: 2rem;
   height: 2rem;
   display: none;
+
+  cursor: pointer;
 }
 
 .hide {
@@ -94,7 +96,7 @@ header h2 {
 }
 
 header span {
-  color: #a68fdc;
+  color: #6a5acd;
   font-size: 2.7rem;
 }
 
@@ -167,17 +169,17 @@ form .input-wrapper+.input-wrapper {
 
 .label-wrapper a {
   text-decoration: none;
-  color: #a68fdc;
+  color: #6a5acd;
 }
 
 .label-wrapper a:hover,
 .help a:hover {
   text-decoration: underline;
-  color: #a68fdc;
+  color: #6a5acd;
 }
 
 input:focus {
-  border: 2px solid #a68fdc;
+  border: 2px solid #6a5acd;
   outline: none;
 }
 
@@ -201,7 +203,7 @@ input:focus {
   display: inline-block;
   margin-left: 2.6rem;
   text-decoration: none;
-  color: #a68fdc;
+  color: #6a5acd;
 }
 
 @keyframes fadeIn {

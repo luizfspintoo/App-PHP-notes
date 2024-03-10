@@ -2,32 +2,20 @@
 
 
 <div class="my-account">
-    <form action="">
-        <div class="info-account">
-            <h2>Redes para contato</h2>
-            <div class="input-wrapper">
-                <label for="">LinkedIn</label>
-                <input type="text" placeholder="url perfil do LinkedIn">
-            </div>
-            <div class="input-wrapper">
-                <label for="">Instagram</label>
-                <input type="text" placeholder="url perfil do Instagram">
-            </div>
-        </div>
-
+    <form method="POST" action="/account">
         <div>
             <h2>Informações Pessoais</h2>
             <div class="input-wrapper">
-                <label for="">Nome</label>
-                <input type="text" maxlength="30" placeholder="Nome completo">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" maxlength="30" placeholder="Nome completo">
             </div>
             <div class="input-wrapper">
-                <label for="">Sobre mim</label> <br>
-                <textarea name="about-message" id="about-message" maxlength="120" placeholder="Escreva um breve resumo"></textarea>
+                <label for="sobre">Sobre mim</label> <br>
+                <textarea name="sobre" id="sobre" maxlength="120" placeholder="Escreva um breve resumo"></textarea>
             </div>
         </div>
 
-        <button>Atualizar</button>
+        <button type="submit">Atualizar</button>
     </form>
 
     <div class="about-me">

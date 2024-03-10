@@ -144,6 +144,10 @@ img {
     cursor: pointer;
 }
 
+span.text-logo {
+    color: #6a5acd;
+}
+
 .menu {
     display: none;
 }
