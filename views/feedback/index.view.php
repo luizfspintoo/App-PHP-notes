@@ -1,11 +1,11 @@
 <?php require base_path("views/partials/dashboard/head.php"); ?>
 <body>
     <div id="app">
-        <?php require base_path("views/partials/dashboard/sidebar.php"); ?>
+    <?php require base_path("views/partials/dashboard/sidebar.php"); ?>
         <main>
             <div class="inner">
                 <?php require base_path("views/partials/dashboard/header.php"); ?>
-                <?php require base_path("views/partials/notes/note-show/main.php"); ?>
+                <?php require base_path("views/partials/feedback/main.php"); ?>
             </div>
         </main>
     </div>

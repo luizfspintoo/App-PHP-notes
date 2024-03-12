@@ -27,11 +27,30 @@ form input {
     font-size: 1.6rem;
 }
 
+.input-wrapper {
+    position: relative;
+}
+
+.edit-icon {
+    position: absolute;
+    top: 3.3rem;
+    right: 1rem;
+    width: 2rem;
+    color: #a68fdc;
+    cursor: pointer;
+}
+
+p.erro-message {
+    margin: 1rem 0;
+    color: rgb(255, 38, 38);
+}
+
+
 form .input-wrapper+.input-wrapper {
     margin-top: 1.6rem;
 }
 
-  textarea {
+textarea {
     background-color: #121214;
     padding: 1.2rem 1.2rem;
     width: 100%;
@@ -41,14 +60,15 @@ form .input-wrapper+.input-wrapper {
     border: 0;
     font-size: 1.6rem;
     border: 2px solid #121214;
-  }
+}
 
-  input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     border: 2px solid #a68fdc;
     outline: none;
-  }
+}
 
-  .my-account button {
+.my-account button {
     margin-top: 2rem;
     border: 0;
     padding: 1.2rem 2rem;
@@ -59,12 +79,12 @@ form .input-wrapper+.input-wrapper {
     font-size: 1.5rem;
     font-weight: bold;
     cursor: pointer;
-  
+
     display: flex;
     align-items: center;
     gap: 0.8rem;
     justify-content: center;
-  }
+}
 
 .about-me {
     width: 50%;
@@ -77,11 +97,6 @@ form .input-wrapper+.input-wrapper {
     display: flex;
     flex-direction: column;
     gap: 3rem;
-}
-
-.about-me img {
-    width: 20%;
-    border-radius: 50%;
 }
 
 .about-me h3 {
@@ -100,7 +115,8 @@ form .input-wrapper+.input-wrapper {
         gap: 4rem;
     }
 
-    .about-me, form {
+    .about-me,
+    form {
         width: 100%;
     }
 
