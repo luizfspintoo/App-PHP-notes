@@ -5,6 +5,7 @@
         <div>
             <h2>Informações da Conta</h2>
             <div class="input-wrapper">
+                <input type="hidden" name="_method" value="PATCH">
                 <input type="hidden" name="id" id="id" value="<?= $userAccount["id"] ?? ""; ?>">
                 <label for="email">Email</label>
                 <input type="text" id="email" name="email" maxlength="30" placeholder="email" value="<?= $userAccount["email"] ?? ""; ?>">

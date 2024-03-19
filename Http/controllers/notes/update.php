@@ -6,12 +6,11 @@ use Core\Validator;
 
 $db = App::resolve(Database::class);
 $erros = [];
-
-$currentUserId = 1;
+$user_id = intval($_SESSION["user"]["id"]);
 
 $note = $db->query("SELECT * FROM notes WHERE id = :id", ["id" => $_POST["id"]])->findOrFail();
 
-autorize($note["user_id"] === $currentUserId);
+autorize($note["user_id"] === $user_id);
 
 if (! Validator::string($_POST["body"], 10, 255)) {
     $erros["body"] = "Campo obrigatório, e permite 255 caracteres";

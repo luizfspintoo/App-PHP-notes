@@ -91,11 +91,6 @@ input {
   overflow: hidden; /* Para garantir que o texto não estoure */
 }
 
-button {
-  margin-top: 1rem; /* Adicionar espaçamento entre o parágrafo e o botão */
-}
-
-
 .note a {
   text-decoration: none;
 }

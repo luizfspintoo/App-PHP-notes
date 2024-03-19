@@ -8,6 +8,7 @@ $db = App::resolve(Database::class);
 
 $email = $_POST["email"];
 $password = $_POST["password"];
+$id = $_POST["id"];
 
 $erros = [];
 
@@ -32,7 +33,7 @@ $user = $db->query("SELECT * FROM users WHERE email = :email", [
 
 if ($user) {
     $db->query("UPDATE users SET password = :password WHERE id = :id", [
-        "id" => $_POST["id"],
+        "id" => $id,
         "password" => password_hash($password, PASSWORD_BCRYPT)
     ]);
 
