@@ -6,7 +6,7 @@ use Core\Validator;
 
 $db = App::resolve(Database::class);
 $erros = [];
-$user_id = intval($_SESSION["user"]["id"]);
+$user_id = $_SESSION["user"]["id"];
 
 $note = $db->query("SELECT * FROM notes WHERE id = :id", ["id" => $_POST["id"]])->findOrFail();
 
