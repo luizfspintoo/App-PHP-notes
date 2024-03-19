@@ -3,6 +3,10 @@
 use Core\Authenticator;
 use Core\Session;
 use Http\Form\LoginForm;
+use Core\Database;
+use Core\App;
+
+$db = App::resolve(Database::class);
 
 $email = $_POST["email"];
 $password = $_POST["password"];
