@@ -2,14 +2,13 @@
 
 use Core\App;
 use Core\Database;
+use Core\Account;
 
 $db = App::resolve(Database::class);
-$cuurentId = 1;
+$currentId = 1;
+$account = new Account($db);
 
-$userAccount = $db->query("SELECT * FROM users WHERE id = :id",[
-    "id" => $cuurentId
-])->get();
-
+$userAccount = $account->getUserAccount($currentId);
 view("account/account.view.php", [
     "userAccount" => $userAccount[0]
 ]);
