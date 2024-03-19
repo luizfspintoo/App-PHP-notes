@@ -2,16 +2,13 @@
 
 use Core\App;
 use Core\Database;
+use Core\Notes;
 
 $db = App::resolve(Database::class);
-$currentId = 1;
+$notes = new Notes($db, $currentId = 1);
 
-$note = $db->query("SELECT * FROM notes WHERE id = :id", ["id" => $_POST["id"]])->findOrFail();
+$notes->deleteNoteById($_POST["id"], $currentId = 1);
 
-autorize($note["user_id"] === $currentId);
 
-$db->query("DELETE FROM notes WHERE id = :id", ["id" => $_POST["id"]]);
-
-redirect("/notes");
 
 

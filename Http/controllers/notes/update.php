@@ -2,32 +2,21 @@
 
 use Core\App;
 use Core\Database;
-use Core\Validator;
+use Core\Notes;
 
 $db = App::resolve(Database::class);
-$erros = [];
 $currentId = 1;
+$notes = new Notes($db, $currentId);
 
-$note = $db->query("SELECT * FROM notes WHERE id = :id", ["id" => $_POST["id"]])->findOrFail();
+$result = $notes->updateNote($_POST["id"], $_POST["body"], $currentId);
 
-autorize($note["user_id"] === $currentId);
-
-if (! Validator::string($_POST["body"], 10, 255)) {
-    $erros["body"] = "Campo obrigatório, e permite 255 caracteres";
-}
-
-if (count($erros)) {
-    return view("notes/edit.view.php", [
-        "heading" => "Editar anotação",
-        "erros" => $erros,
-        "note" => $note
+if ($result === true) {
+    redirect("/notes");
+} else {
+    view("notes/edit.view.php", [
+        "heading" => "Editar Anotação",
+        "erros" => $result["erros"],
+        "note" => $result["note"]
     ]);
 }
-
-$db->query("UPDATE notes SET body = :body WHERE id = :id", [
-    "id" => $_POST["id"],
-    "body" => $_POST["body"]
-]);
-
-redirect("/notes");
 

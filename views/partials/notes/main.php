@@ -4,7 +4,6 @@
         <img src="/images/create.svg">
     <?php else : ?>
         <div class="notes">
-
             <?php foreach ($notes as $note) : ?>
                 <div class="note">
                     <?php if (strlen($note["body"]) > 0) : ?>
