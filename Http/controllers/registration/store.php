@@ -31,15 +31,12 @@ $user = $db->query("SELECT * FROM users WHERE email = :email", [
 ])->find();
 
 if ($user) {
-    
     redirect("/dashboard");
 } else {
     $db->query("INSERT INTO users (email, password) VALUES (:email, :password)", [
         "email" => $email,
         "password" => password_hash($password, PASSWORD_BCRYPT) //senha mais segura (criptografada no banco)
     ]);
-
-    $id = $db->lastInsertId();
 
     //cria sessão para usuario
     $_SESSION["user"] = [
