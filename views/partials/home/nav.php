@@ -21,9 +21,16 @@
                     </a>
                     </li>
                     <li>
+                    <!-- Muda o botão se o usuário tiver logado -->
+                    <?php if ($_SESSION) : ?>
+                        <a class="cta" href="/dashboard">
+                            Voltar Dashboard
+                        </a>
+                    <?php else : ?>
                         <a class="cta" href="/login">
                             Faça login
                         </a>
+                    <?php endif; ?>
                     </li>
                 </ul>
 
