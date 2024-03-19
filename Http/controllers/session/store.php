@@ -12,6 +12,15 @@ $form = new LoginForm();
 if ($form->validate($email, $password)) {
     if((new Authenticator)->attempt($email, $password)) {
         sleep(1);
+
+        $user_id = $db->lastInsertId();
+
+        //cria sessão para usuario
+        $_SESSION["user"] = [
+            "user_id" => $user_id,
+            "email" => $email
+        ];
+
         redirect("/dashboard");
     } else {
         $form->erro("email", "Email ou senha estão incorretos");
