@@ -36,18 +36,11 @@ if ($user) {
 
     //cria sessão para usuario
     $_SESSION["user"] = [
-<<<<<<< HEAD
         "id" => $user_id,
         "email" => $email
     ];
 
 
-=======
-        "user_id" => $user_id,
-        "email" => $email
-    ];
-
->>>>>>> 961ec5ae3316ee6c1aede1a9caded7d4278ed589
     redirect("/dashboard");
 } else {
     $db->query("INSERT INTO users (email, password) VALUES (:email, :password)", [
@@ -59,11 +52,7 @@ if ($user) {
 
     //cria sessão para usuario
     $_SESSION["user"] = [
-<<<<<<< HEAD
         "id" => $user_id,
-=======
-        "user_id" => $user_id,
->>>>>>> 961ec5ae3316ee6c1aede1a9caded7d4278ed589
         "email" => $email
     ];
 
