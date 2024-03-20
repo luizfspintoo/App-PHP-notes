@@ -38,7 +38,7 @@ class UserRegistration
                 "email" => $email,
                 "password" => password_hash($password, PASSWORD_BCRYPT)
             ]);
-
+            
             $this->createSessionUser($email);
             redirect("/dashboard");
         }

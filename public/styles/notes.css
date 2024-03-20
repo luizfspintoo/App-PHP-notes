@@ -3,13 +3,13 @@ input {
     padding: 1.2rem 1.2rem 1.2rem 4rem;
     border-radius: 1rem;
     color: white;
-    border: 2px solid #121214;
+    border: 1px solid #121214;
     font-size: 1.6rem;
     width: 600px;
   }
 
   input:focus {
-    border: 2px solid #a68fdc;
+    border: 1px solid #a68fdc;
     outline: none;
   }
 
@@ -36,7 +36,7 @@ input {
 }
 .input-wrapper ion-icon {
   position: absolute;
-  top: 1.5rem;
+  top: 1.2rem;
   left: 1rem;
 }
 
