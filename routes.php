@@ -47,7 +47,7 @@ $router->patch("/account", "account/store.php")->only("auth");
 
 //rota feedback do usuario referente a plataforma
 $router->get("/feedback", "feedback/index.php")->only("auth");
-$router->post("/feedback", "feedback/index.php")->only("auth");
+$router->post("/feedback", "feedback/store.php")->only("auth");
 
 
 

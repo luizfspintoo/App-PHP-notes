@@ -86,7 +86,7 @@ input {
 }
 
 .note p {
-  margin: 0; 
+  margin-bottom: 2rem; 
   word-wrap: break-word; /* Quebrar palavras para evitar estouro */
   overflow: hidden; /* Para garantir que o texto não estoure */
 }
