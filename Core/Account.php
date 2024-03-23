@@ -33,13 +33,9 @@ class Account
             return $erros;
         }
 
-        $this->db->query("UPDATE users SET password = :password WHERE id = :id", [
+        return $this->db->query("UPDATE users SET password = :password WHERE id = :id", [
             "id" => $id,
             "password" => password_hash($password, PASSWORD_BCRYPT)
         ]);
-
-        redirect("/dashboard");
     }
 }
-
-

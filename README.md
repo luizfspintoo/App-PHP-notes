@@ -58,9 +58,6 @@ return [
 - Sinta-se à vontade para relatar problemas ou sugerir melhorias.
 
 
-## Próximos Passos
-- [ ] Funcionalidade de edição da conta do usuário.
-
 
 
 

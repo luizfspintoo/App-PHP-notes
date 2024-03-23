@@ -8,7 +8,6 @@
     });
 });
 
-//profile menu
 let profileMenu = document.getElementById("profile");
     let menuContainer = document.querySelector(".profile");
 

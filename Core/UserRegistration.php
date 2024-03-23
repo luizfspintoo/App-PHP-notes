@@ -38,19 +38,16 @@ class UserRegistration
                 "email" => $email,
                 "password" => password_hash($password, PASSWORD_BCRYPT)
             ]);
+
+            $id = $this->db->lastId();
             
-            $this->createSessionUser($email);
+            $_SESSION["user"] = [
+                "email" => $email,
+                "id" => $id
+            ];
+
+            sleep(1);
             redirect("/dashboard");
         }
-    }
-
-    public function createSessionUser($email)
-    {
-        $_SESSION["user"] = [
-            "email" => $email
-        ];
-
-        sleep(1);
-        return true; // Registro bem-sucedido
     }
 }

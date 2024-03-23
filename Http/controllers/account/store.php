@@ -7,5 +7,11 @@ use Core\Account;
 $db = App::resolve(Database::class);
 $account = new Account($db);
 
-$account->UpdateAccount($_POST["id"], $_POST["password"]);
+$result = $account->UpdateAccount($_POST["id"], $_POST["password"]);
+
+if ($result) {
+    redirect("/dashboard");
+}
+
+
 

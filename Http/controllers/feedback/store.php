@@ -5,7 +5,7 @@ use Core\Database;
 use Core\Feedback;
 
 $db = App::resolve(Database::class);
-$currentId = 1;
+$currentId = intval($_SESSION["user"]["id"]);
 
 $feedback = new Feedback($db, $currentId);
 $result = $feedback->createFeedback($_POST["body"]);

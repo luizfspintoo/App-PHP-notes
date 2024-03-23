@@ -22,8 +22,19 @@ class UserLogin
 
         if ($form->validate($email, $password)) {
             if ((new Authenticator)->attempt($email, $password)) {
+
+                $id = $this->db->query("SELECT id FROM users WHERE email = :email", [
+                    "email" => $email,
+                ])->find();
+
+                $_SESSION["user"] = [
+                    "email" => $email,
+                    "id" => $id
+                ];
+    
                 sleep(1);
-                redirect("/dashboard"); // Redirecionamento bem-sucedido
+                redirect("/dashboard");
+
             } else {
                 $form->erro("email", "Email ou senha estão incorretos");
             }

@@ -5,8 +5,8 @@ use Core\Database;
 use Core\Notes;
 
 $db = App::resolve(Database::class);
-$currentId = 1;
-$notes = new Notes($db, $currentId = 1);
+$currentId = intval($_SESSION["user"]["id"]);
+$notes = new Notes($db, $currentId);
 
 $note = $notes->showNote($_GET["id"]);
 autorize($note["user_id"] === $currentId);
