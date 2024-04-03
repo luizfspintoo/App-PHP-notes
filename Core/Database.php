@@ -3,20 +3,25 @@
 namespace Core;
 
 use PDO;
+use PDOException;
 
 class Database
 {
     public $connection;
     public $statement;
 
-    public function __construct($config, $username = "root", $password = "")
+    public function __construct($config)
     {
-
         $dns = "mysql:" . http_build_query($config, "", ";");
 
-        $this->connection = new PDO($dns, $username, $password, [
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-        ]);
+        try {
+            $this->connection = new PDO($dns, $config["username"], $config["password"], [
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+            ]);
+        } catch (PDOException $error) {
+            view("500.php");
+            exit();
+        }
     }
 
     public function query($query, $parameters = [])
@@ -42,10 +47,10 @@ class Database
     {
         $result = $this->find();
 
-        if (! $result) {
+        if (!$result) {
             abort();
         }
-    
+
         return $result;
     }
 }
