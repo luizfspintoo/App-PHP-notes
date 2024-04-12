@@ -24,7 +24,7 @@
                 <form action="/session" method="POST">
                     <div class="input-wrapper">
                         <label for="email">E-mail</label>
-                        <input type="email" name="email" id="email" placeholder="Informe o seu email">
+                        <input type="email" name="email" id="email" placeholder="Informe o seu email" value="<?= $email ?>">
                         <?php if (isset($erros["email"])) : ?>
                             <p class="erro-message"><?= $erros["email"]; ?></p>
                         <?php endif; ?>

@@ -18,7 +18,7 @@ class UserRegistration
             $erros["email"] = "Este email não é valído";
         }
         
-        if (! Validator::string($password, 10, 15)) {
+        if (! Validator::string($password, 10, 50)) {
             $erros["password"] = "Senha invalida, minino 10 caracteres";
         }
 
@@ -46,7 +46,7 @@ class UserRegistration
                 "id" => $id
             ];
 
-            sleep(1);
+            
             redirect("/dashboard");
         }
     }

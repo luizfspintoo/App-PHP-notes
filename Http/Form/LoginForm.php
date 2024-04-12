@@ -16,7 +16,7 @@ class LoginForm
         }
 
         if (!Validator::string($password)) {
-            $erros["password"] = "A senha inválida";
+            $erros["password"] = "O formato da senha inválida";
         }
 
         return empty($this->erros);

@@ -2,6 +2,7 @@
 
 namespace Core;
 
+use Exception;
 use PDO;
 use PDOException;
 
@@ -19,8 +20,7 @@ class Database
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
             ]);
         } catch (PDOException $error) {
-            view("500.php");
-            exit();
+            throw new Exception('DATABASE_ERROR');
         }
     }
 
@@ -52,5 +52,10 @@ class Database
         }
 
         return $result;
+    }
+
+    public function lastId()
+    {
+        return $this->connection->lastInsertId();
     }
 }
