@@ -1,10 +1,15 @@
 <link rel="stylesheet" href="/styles/note.css">
 
-        <div class="card note">
-            <p>
-                <?= $note['body']; ?>
-            </p>
-        </div>
+        <?php if(isset($note['erro'])) : ?>
+            <p>Houve erro ao mostrar a nota</p>
+        <?php else : ?>
+            <div class="card note">
+                <p>
+                    <?= $note['body']; ?>
+                </p>
+            </div>
+        <?php endif; ?>
+        
         <div class="buttons card">
             <footer class="mt-6">
                 <a href="/note/edit?id=<?= $note["id"] ?>">

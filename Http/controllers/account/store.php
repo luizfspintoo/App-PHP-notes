@@ -1,17 +1,15 @@
 <?php
 
-use Core\App;
-use Core\Database;
 use Core\Account;
 
-$db = App::resolve(Database::class);
-$account = new Account($db);
-
+$account = new Account();
 $result = $account->UpdateAccount($_POST["id"], $_POST["password"]);
 
-if ($result) {
-    redirect("/dashboard");
+if($result["erro"]) {
+    view("account/account.view.php", [
+        "erros" => $result
+    ]);
 }
 
-
+redirect('/dashboard');
 

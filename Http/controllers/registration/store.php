@@ -1,16 +1,13 @@
 <?php
 
-use Core\App;
-use Core\Database;
+// use Core\App;
+// use Core\Database;
 use Core\UserRegistration;
 
-$db = App::resolve(Database::class);
-$userRegistration = new UserRegistration($db);
+$userRegistration = new UserRegistration();
 $result = $userRegistration->registerUser($_POST["email"], $_POST["password"]);
 
-if ($result === true) {
-    redirect("/dashboard");
-} else {
+if (!$result) {
     return view("registration/create.view.php", [
         "erros" => $result
     ]);

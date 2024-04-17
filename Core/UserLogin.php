@@ -21,7 +21,7 @@ class UserLogin
             }
         } catch (\Exception $e) {
             if ($e->getMessage() == "DATABASE_ERROR") {
-                $form->erro("email", "Não foi possível conectar-se ao banco de dados");
+                $form->erro("email", "Houve um erro ao realizar login");
             } else {
                 $form->erro("email", "Erro desconhecido");
             }

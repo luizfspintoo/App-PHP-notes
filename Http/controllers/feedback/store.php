@@ -1,20 +1,12 @@
 <?php
 
-use Core\App;
-use Core\Database;
 use Core\Feedback;
 
-$db = App::resolve(Database::class);
+$feedback = new Feedback();
 $currentId = intval($_SESSION["user"]["id"]);
 
-$feedback = new Feedback($db, $currentId);
-$result = $feedback->createFeedback($_POST["body"]);
+$result = $feedback->createFeedback($_POST["body"], $currentId);
 
-if ($result === true) {
-    redirect("/dashboard");
-} else {
-    $erros = $result;
-    view("feedback/index.view.php", [
-        "erros" => $erros
-    ]);
-}
+view("feedback/index.view.php", [
+    "erros" => $result
+]);

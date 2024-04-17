@@ -1,15 +1,12 @@
 <?php
 
-use Core\App;
-use Core\Database;
 use Core\Notes;
 
-$db = App::resolve(Database::class);
 $currentId = intval($_SESSION["user"]["id"]);
-$notes = new Notes($db, $currentId);
+$notes = new Notes();
 
 $note = $notes->showNote($_GET["id"]);
-autorize($note["user_id"] === $currentId);
+autorize($note["user_id"] == $currentId);
 
 // renderiza a view
 view("notes/show.view.php", [
