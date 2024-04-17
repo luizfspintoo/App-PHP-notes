@@ -32,7 +32,7 @@
                     <div class="input-wrapper">
                         <div class="label-wrapper flex">
                             <label for="password">Senha</label>
-                            <a href="#">Esqueceu a senha?</a>
+                            <!-- <a href="#">Esqueceu a senha?</a> -->
                         </div>
                         <input type="password" name="password" id="password" placeholder="Informe sua senha">
                         <img onclick="togglePassword()" class="eye" src="/images/eye.svg" alt="">

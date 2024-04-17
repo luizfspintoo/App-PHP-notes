@@ -1,10 +1,7 @@
 <?php 
 
-//rotas App padrão
-// $router->get("/", "index.php");
-// $router->get("/about", "about.php");
-// $router->get("/contact", "contact.php");
-
+//rota App padrão
+$router->get("/", "index.php");
 
 //rota exibir
 $router->get("/notes", "notes/index.php")->only("auth");

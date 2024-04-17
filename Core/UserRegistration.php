@@ -39,16 +39,15 @@ class UserRegistration
                     "id" => $id
                 ];
 
-                return redirect("/dashboard");
+                redirect("/dashboard");
             }
         } catch (\Exception $e) {
             if ($e->getMessage() == "DATABASE_ERROR") {
                 $erros["password"] = "Houve um erro ao registrar usuário";
-                return $erros;
             } else {
                 $erros["password"] = "Erro desconhecido";
-                return $erros;
             }
+            return $erros;
         }
     }
 }
