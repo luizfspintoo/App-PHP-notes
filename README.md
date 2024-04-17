@@ -46,7 +46,7 @@ return [
     "host" => "localhost",
     "port" => 9999,
     "dbname" => "notesync",
-    "charset" => "utf8mb4"
+    "charset" => "utf8mb4",
     "username" => "root", 
     "password" => "Teste123"
 ];
