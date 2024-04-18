@@ -6,7 +6,9 @@
             "email": "luizfspintoo@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "monolog/monolog": "^3.6"
+    },
     "autoload": {
         "psr-4": {
             "Core\\": "Core/",
