@@ -1,0 +1,16 @@
+{
+    "name": "luizf/note-sync",
+    "authors": [
+        {
+            "name": "luizfspintoo",
+            "email": "luizfspintoo@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
+    }
+}
