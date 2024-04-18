@@ -27,17 +27,20 @@ class Account
     {
         try {
             $erros = [];
-            if (!Validator::string($password, 10, 20)) {
+            if (!Validator::string($password, 10, 50)) {
                 $erros["password"] = "Senha inválida, mínimo 10 caracteres";
             }
             if (!empty($erros)) {
                 return $erros;
             }
-            $result = App::resolve(Database::class)->query("UPDATE users SET password = :password WHERE id = :id", [
+
+            App::resolve(Database::class)->query("UPDATE users SET password = :password WHERE id = :id", [
                 "id" => $id,
                 "password" => password_hash($password, PASSWORD_BCRYPT)
             ]);
-            return $result;
+
+            \redirect('/dashboard');
+
         } catch (\Exception $e) {
             if ($e->getMessage() == "DATABASE_ERROR") { 
                 //PAREI AQUI
