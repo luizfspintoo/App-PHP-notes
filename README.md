@@ -9,7 +9,8 @@ NoteSync é um aplicativo de notas que permite aos usuários criar e gerenciar s
 
 :white_check_mark: **Autenticação de Usuário:** Os usuários podem criar uma conta e fazer login para acessar suas notas.<br>
 :white_check_mark: **Criação de Notas:** Com o login autenticado, os usuários podem criar, editar e excluir suas notas.<br>
-:white_check_mark: **Interface Intuitiva:** Design simples e amigável para facilitar a experiência do usuário.<br>
+:white_check_mark: **Envios de Feedback** É possivel enviar feedbacks sobre a plataforma<br>
+
 
 ## Como Usar 🛠️
 
@@ -17,13 +18,18 @@ NoteSync é um aplicativo de notas que permite aos usuários criar e gerenciar s
 
 - Certifique-se de ter o PHP instalado em seu ambiente.
 - Configure um servidor web, como Apache, para executar o aplicativo.
+- Certifique-se de ter o gerenciador de dependências instalado (Composer).
 
 ### Instalação
 
 1. Clone este repositório: `git clone https://github.com/seu-usuario/note-sync.git`
 2. Navegue até o diretório do projeto: `cd note-sync`
-3. Inicie seu servidor web. 
-4. Se você deseja usar o servidor PHP embutido para testar seu aplicativo, basta rodar o seguinte comando:
+3. Rode o comando no terminal para instalar as dependências do projeto:
+```
+composer install
+```
+4. Inicie seu servidor web. 
+5. Se você deseja usar o servidor PHP embutido para testar seu aplicativo, basta rodar o seguinte comando:
 
 ```bash
 
