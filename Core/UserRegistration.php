@@ -3,6 +3,7 @@
 namespace Core;
 
 use Core\Database;
+
 use Monolog\Level;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
@@ -12,9 +13,9 @@ class UserRegistration
     public function registerUser($email, $password)
     {
 
-        //log
-        $log = new Logger('registro de usuario ');
-        $log->pushHandler(new StreamHandler('../logs/registration/user-registration.log', Level::Warning));
+        // create a log channel
+        $log = new Logger("registro de usuario ");
+        $log->pushHandler(new StreamHandler("../logs/register.log", Level::Warning));
 
         try {
             if (!Validator::email($email)) {
@@ -47,13 +48,14 @@ class UserRegistration
                     "id" => $id
                 ];
 
+                
+                $log->warning("registrado com sucesso");
                 redirect("/dashboard");
-                $log->warning('Usuario registrado com sucesso');
             }
         } catch (\Exception $e) {
             if ($e->getMessage() == "DATABASE_ERROR") {
                 $erros["password"] = "Houve um erro ao registrar usuário";
-                $log->error('Houve um erro ao registrar usuario - Class (UserRegistration)');
+                $log->error("erro a registrar {Class - UserRegistration}");
             } else {
                 $erros["password"] = "Erro desconhecido";
             }

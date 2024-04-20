@@ -4,11 +4,18 @@ namespace Core;
 
 use Core\Database;
 use Core\Validator;
+use Monolog\Level;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
 
 class Notes
 {
     public function createNote($body, $currentId)
     {
+
+        $log = new Logger("registro de notas ");
+        $log->pushHandler(new StreamHandler("../logs/notes.log", Level::Info));
+
         try {
             $erros = [];
             if (!Validator::string($body, 10, 255)) {
@@ -19,12 +26,14 @@ class Notes
                     "body" => $body,
                     "user_id" => $currentId
                 ]);
+                $log->info("nota criada com sucesso");
                 return true; 
             }
             return $erros; 
         } catch (\Exception $e) {
             if($e->getMessage() == "DATABASE_ERROR") {
                 $erros["body"] = "Houve um erro ao criar nota";
+                $log->error("Houve um erro ao criar nota {Class - Notes}");
             } else {
                 $erros["body"] = "Erro desconhecido";
             }
@@ -85,6 +94,8 @@ class Notes
 
     public function updateNote($id, $body, $currentId)
     {
+        $log = new Logger("Atualização da nota ");
+        $log->pushHandler(new StreamHandler("../logs/notes.log", Level::Info));
 
         try {
             $note = $this->getNoteToEdit($id);
@@ -98,12 +109,14 @@ class Notes
                     "id" => $id,
                     "body" => $body
                 ]);
+                $log->info("nota atualizada com sucesso");
                 return true;
             }
             return $erros;
         } catch (\Exception $e) {
             if($e->getMessage() == "DATABASE_ERROR") {
                 $erros["body"] = "Houve um erro ao atualizar nota";
+                $log->error("Houve um erro ao atualizar nota {Class - Notes}");
             } else {
                 $erros = "Erro desconhecido"; 
             }
@@ -113,6 +126,9 @@ class Notes
     
     public function deleteNoteById($id, $currentId)
     {
+
+        $log = new Logger("Deletar nota ");
+        $log->pushHandler(new StreamHandler("../logs/notes.log", Level::Info));
 
         try {
             $note = $this->getNoteToEdit($id);
@@ -126,10 +142,12 @@ class Notes
                 return false;
             }
     
+            $log->info("nota deletada com sucesso");
             redirect("/notes");
         } catch (\Exception $e) {
             if($e->getMessage() == "DATABASE_ERROR") {
                 $erros["body"] = "Houve um erro ao deletar nota";
+                $log->info("Houve um erro ao deletar nota {Class - Notes}");
             } else {
                 $erros["body"] = "Erro desconhecido";
             }
