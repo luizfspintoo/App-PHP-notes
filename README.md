@@ -16,9 +16,9 @@ NoteSync é um aplicativo de notas que permite aos usuários criar e gerenciar s
 
 ### Pré-requisitos
 
-- Certifique-se de ter o PHP instalado em seu ambiente.
+- Certifique-se de ter o PHP instalado em seu ambiente. <a href="https://www.php.net/downloads.php" target="_blank">Site oficial PHP</a>
 - Configure um servidor web, como Apache, para executar o aplicativo.
-- Certifique-se de ter o gerenciador de dependências instalado (Composer).
+- Certifique-se de ter o gerenciador de dependências instalado (Composer). <a href="https://getcomposer.org/download/" target="_blank">Site oficial Composer</a>
 
 ### Instalação
 
