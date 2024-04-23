@@ -1,7 +1,8 @@
-<?php 
+<?php
 
 namespace Core;
 
+use Core\Models\NotesModel;
 use Core\Validator;
 use Monolog\Level;
 use Monolog\Logger;
@@ -10,6 +11,17 @@ use Core\Model;
 
 class Notes
 {
+
+    /**
+     * @var NotesModel
+     */
+    private $notesModel;
+
+    public function __construct()
+    {
+        $this->notesModel = new NotesModel();
+    }
+
     public function createNote($body, $currentId)
     {
 
@@ -22,8 +34,10 @@ class Notes
                 $erros["body"] = "Campo obrigatório, preencha acima de 10 caracteres";
             }
             if (empty($erros)) {
-                $model = new Model();
-                $model->insertNote($body, $currentId);
+                $this->notesModel->create([
+                    "body" => $body,
+                    "user_id" => $currentId
+                ]);
 
                 $log->info("nota criada com sucesso");
                 return true; 
@@ -43,8 +57,7 @@ class Notes
     public function getAllNotes($currentId)
     {
         try {
-            $model = new Model();
-            $result = $model->allNotes($currentId);
+            $result = $this->notesModel->allNotesByUser($currentId);
             return $result;
         } catch (\Exception $e) {
             if($e->getMessage() == "DATABASE_ERROR") {
@@ -59,8 +72,7 @@ class Notes
     public function showNote($id)
     {
         try {
-            $model = new Model();
-            $result = $model->displayNote($id);
+            $result = $this->notesModel->find($id);
             return $result;
         } catch (\Exception $e) {
             if($e->getMessage() == "DATABASE_ERROR") {
