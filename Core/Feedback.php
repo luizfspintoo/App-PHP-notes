@@ -6,8 +6,8 @@ use Core\Validator;
 use Monolog\Level;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
-
 use PHPMailer\PHPMailer\PHPMailer;
+use Core\Model;
 
 
 class Feedback
@@ -29,12 +29,8 @@ class Feedback
             }
 
             if (empty($erros)) {
-                App::resolve(Database::class)->query("INSERT INTO feedback(name, email, body, user_id) VALUES (:name, :email, :body, :user_id)", [
-                    "name" => $name,
-                    "email" => $email,
-                    "body" => $body,
-                    "user_id" => $currentId
-                ]);
+                $model = new Model();
+                $model->insertFeedback($name, $email, $body, $currentId);
 
                 $log->info("Feedback enviada com sucesso ao banco de dados");
 

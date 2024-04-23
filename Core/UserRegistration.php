@@ -2,11 +2,10 @@
 
 namespace Core;
 
-use Core\Database;
-
 use Monolog\Level;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
+use Core\Model;
 
 class UserRegistration
 {
@@ -30,18 +29,15 @@ class UserRegistration
                 return $erros;
             }
 
-            $user = App::resolve(Database::class)->query("SELECT * FROM users WHERE email = :email", [
-                "email" => $email
-            ])->find();
+                $model = new Model();
+                $user = $model->findUser($email);
 
             if ($user) {
                 $erros["email"] = "Já existe uma conta cadastrada com este email. Por favor, tente com outro email.";
                 return $erros;
             } else {
-                $id = App::resolve(Database::class)->query("INSERT INTO users (email, password) VALUES (:email, :password)", [
-                    "email" => $email,
-                    "password" => password_hash($password, PASSWORD_BCRYPT)
-                ])->lastId();
+                $model = new Model();
+                $id = $model->registerUser($email, $password);
 
                 $_SESSION["user"] = [
                     "email" => $email,

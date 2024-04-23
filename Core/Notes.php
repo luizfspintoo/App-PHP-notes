@@ -2,11 +2,11 @@
 
 namespace Core;
 
-use Core\Database;
 use Core\Validator;
 use Monolog\Level;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
+use Core\Model;
 
 class Notes
 {
@@ -22,10 +22,9 @@ class Notes
                 $erros["body"] = "Campo obrigatório, preencha acima de 10 caracteres";
             }
             if (empty($erros)) {
-                App::resolve(Database::class)->query("INSERT INTO notes(body, user_id) VALUES (:body, :user_id)", [
-                    "body" => $body,
-                    "user_id" => $currentId
-                ]);
+                $model = new Model();
+                $model->insertNote($body, $currentId);
+
                 $log->info("nota criada com sucesso");
                 return true; 
             }
@@ -44,9 +43,8 @@ class Notes
     public function getAllNotes($currentId)
     {
         try {
-            $result = App::resolve(Database::class)->query("SELECT * FROM notes WHERE user_id = :user_id", [
-                "user_id" => $currentId
-            ])->get();
+            $model = new Model();
+            $result = $model->allNotes($currentId);
             return $result;
         } catch (\Exception $e) {
             if($e->getMessage() == "DATABASE_ERROR") {
@@ -61,9 +59,8 @@ class Notes
     public function showNote($id)
     {
         try {
-            $result = App::resolve(Database::class)->query("SELECT * FROM notes WHERE id = :id", [
-                "id" => $id
-            ])->findOrFail();
+            $model = new Model();
+            $result = $model->displayNote($id);
             return $result;
         } catch (\Exception $e) {
             if($e->getMessage() == "DATABASE_ERROR") {
@@ -78,9 +75,8 @@ class Notes
     public function getNoteToEdit($id)
     {
         try {
-            $result = App::resolve(Database::class)->query("SELECT * FROM notes WHERE id = :id", [
-                "id" => $id
-            ])->findOrFail();
+            $model = new Model();
+            $result = $model->getToEdit($id);
             return $result;
         } catch (\Exception $e) {
             if($e->getMessage() == "DATABASE_ERROR") {
@@ -98,17 +94,16 @@ class Notes
         $log->pushHandler(new StreamHandler("../logs/notes.log", Level::Info));
 
         try {
-            $note = $this->getNoteToEdit($id);
+            $model = new Model();
+            $note = $model->getToEdit($id);
             autorize($note["user_id"] === $currentId);
             $erros = [];
             if (!Validator::string($body, 10, 255)) {
                 $erros["body"] = "Campo obrigatório, preencha acima de 10 caracteres";
             }
             if (empty($erros)) {
-                App::resolve(Database::class)->query("UPDATE notes SET body = :body WHERE id = :id", [
-                    "id" => $id,
-                    "body" => $body
-                ]);
+                $model = new Model();
+                $model->changeNotes($id, $body);
                 $log->info("nota atualizada com sucesso");
                 return true;
             }
@@ -131,12 +126,11 @@ class Notes
         $log->pushHandler(new StreamHandler("../logs/notes.log", Level::Info));
 
         try {
-            $note = $this->getNoteToEdit($id);
+            $model = new Model();
+            $note = $model->getToEdit($id);
             autorize($note["user_id"] === $currentId);
     
-            $noteDelete = App::resolve(Database::class)->query("DELETE FROM notes WHERE id = :id", [
-                "id" => $id
-            ]);
+            $noteDelete = $model->removeNote($id);
     
             if (! $noteDelete) {
                 return false;

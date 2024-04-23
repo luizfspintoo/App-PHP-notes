@@ -2,13 +2,14 @@
 
 namespace Core;
 
+use Core\Model;
+
 class Authenticator
 {
     public function attempt($email, $password)
     {
-        $user = App::resolve(Database::class)->query("SELECT * FROM users WHERE email = :email", [
-            "email" => $email
-        ])->find();
+        $model = new Model();
+        $user = $model->findUser($email);
 
         if ($user) {
             if (password_verify($password, $user["password"])) {

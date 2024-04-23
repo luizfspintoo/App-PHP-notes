@@ -6,15 +6,15 @@ use Core\Validator;
 use Monolog\Level;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
+use Core\Model;
 
 class Account
 {
     public function getUserAccount($id)
     {
         try {
-            $result = App::resolve(Database::class)->query("SELECT * FROM users WHERE id = :id", [
-                "id" => $id
-            ])->find();
+            $model = new Model();
+            $result = $model->getUsers($id);
             return $result;
         } catch (\Exception $e) {
             if ($e->getMessage() == "DATABASE_ERROR") {
@@ -39,10 +39,8 @@ class Account
                 return $erros;
             }
 
-            App::resolve(Database::class)->query("UPDATE users SET password = :password WHERE id = :id", [
-                "id" => $id,
-                "password" => password_hash($password, PASSWORD_BCRYPT)
-            ]);
+            $model = new Model();
+            $model->updatePasswordUser($id, $password);
             $log->info("senha atualizada com sucesso");
             \redirect('/dashboard');
 
