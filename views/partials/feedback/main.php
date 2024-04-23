@@ -11,13 +11,15 @@
 
         <div class="rating">
             <form action="/feedback" method="POST">
-                <textarea name="body" id="body" rows="4" placeholder="Escreva o seu Feedback aqui 🚀" maxlength="160"></textarea>
 
-                <?php if (isset($erros["body"])) : ?>
-                    <p class="erro-message"><?= $erros["body"]; ?></p>
+                <input type="text" name="name" id="name" placeholder="Digite seu nome" maxlength="160"><br>
+                <?php if (isset($erros["name"])) : ?>
+                    <p class="erro-message"><?= $erros["name"]; ?></p>
                 <?php endif; ?>
 
+                <input type="text" name="email" id="email" placeholder="Digite seu email" maxlength="160" value="<?= $_SESSION["user"]["email"]; ?>"><br>
 
+                <textarea name="body" id="body" rows="4" placeholder="Escreva o seu Feedback aqui 🚀" maxlength="160"></textarea>
                 <?php if (isset($erros["body"])) : ?>
                     <p class="erro-message"><?= $erros["body"]; ?></p>
                 <?php endif; ?>

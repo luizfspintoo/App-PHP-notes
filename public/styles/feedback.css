@@ -37,18 +37,18 @@ p.erro-message {
     padding-left: 1rem;
 }
 
-.rating textarea {
+.rating textarea, input {
     width: 100%;
     background-color: transparent;
     border: 1px solid #232323;
     border-radius: 0.8rem;
-    margin: 1.2rem 0rem;
+    margin: 0.8rem 0rem;
     padding: 0.5rem;
     font-size: 17px;
     color: white;
 }
 
-textarea:focus {
+textarea:focus, input:focus {
     border: 1px solid #a68fdc;
     outline: none;
   }
