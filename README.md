@@ -28,7 +28,7 @@ NoteSync é um aplicativo de notas que permite aos usuários criar e gerenciar s
 ```
 composer install
 ```
-4. Inicie seu servidor web. 
+4. Inicie seu servidor web.
 5. Se você deseja usar o servidor PHP embutido para testar seu aplicativo, basta rodar o seguinte comando:
 
 ```bash
@@ -40,36 +40,10 @@ php -S localhost:8888 -t public
 ### Configuração do banco de dados ⚙️
 
 1. Configure um banco de dados MySQL.
-2. No arquivo `config.php` na raiz do projeto, adicione as informações do seu banco de dados:
-
-```php
-
-<?php 
-
-//exemplo
-
-return [
-    "host" => "localhost",
-    "port" => 9999,
-    "dbname" => "notesync",
-    "charset" => "utf8mb4",
-    "username" => "root", 
-    "password" => "Teste123"
-];
-
-```
-3. Após ter configurado o arquivo `config.php`, é necessario crias as tabelas no banco de dados.
-
-4. Na raiz do `projeto`, tem um arquivo com nome de `myapp.sql`, contendo as tabelas que precisam ser criadas no banco de dados. Você pode baixar em sua máquina e executar as `instruções SQL` contidas nele.
-
+2. Copie o arquivo `.env.example` para `.env` e configure as credenciais do banco de dados.
+3. Crie as tabelas copiando e executando as instruções SQL contidas no arquivo [`myapp.sql`](https://github.com/luizfspintoo/note-sync/blob/main/myapp.sql)
 
 ## Notas Importantes 📜
 
 - Este projeto ainda está em desenvolvimento.
-- Sinta-se à vontade para relatar problemas ou sugerir melhorias.
-
-
-
-
-
-
+- Sinta-se à vontade para relatar problemas ou sugerir melhorias. 
