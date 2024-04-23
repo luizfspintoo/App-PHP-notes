@@ -15,13 +15,13 @@ class UserLogin
     public function login($email, $password)
     {
        $log = new Logger('registro de usuario ');
-       $log->pushHandler(new StreamHandler('../logs/login.log', Level::Warning));
+       $log->pushHandler(new StreamHandler('../logs/login.log', Level::Info));
 
         $form = new LoginForm();
         try {
             if ($form->validate($email, $password)) {
                 if ((new Authenticator)->attempt($email, $password)) {
-                    $log->warning('login realizado com sucesso');
+                    $log->info('login realizado com sucesso');
                     redirect("/dashboard");
                 } else {
                     $form->erro("email", "Email ou senha estão incorretos");
