@@ -12,8 +12,10 @@ use Monolog\Handler\StreamHandler;
 
 class Database
 {
+    /**
+     * @var PDO
+     */
     public $connection;
-    public $statement;
 
     public function __construct($config)
     {
