@@ -17,12 +17,12 @@ class Database
      */
     public $connection;
 
-    public function __construct($config)
+    public function __construct()
     {
 
-         // Carregar variáveis do .env
-         $dotenv = Dotenv::createImmutable(__DIR__ . '/../');
-         $dotenv->load();
+        // Carregar variáveis do .env
+        $dotenv = Dotenv::createImmutable(__DIR__ . '/../');
+        $dotenv->load();
 
         //log
         $log = new Logger("conexão com banco de dados ");
