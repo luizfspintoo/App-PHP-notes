@@ -2,14 +2,18 @@
 
 namespace Core;
 
-use Core\Model;
+use Core\Models\UsersModel;
+
+// use Core\Model;
 
 class Authenticator
 {
+
     public function attempt($email, $password)
     {
-        $model = new Model();
-        $user = $model->findUser($email);
+        $usersModel = new UsersModel();
+        $result = $usersModel->allUsers($email);
+        $user = $result[0];
 
         if ($user) {
             if (password_verify($password, $user["password"])) {

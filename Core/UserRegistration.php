@@ -6,9 +6,18 @@ use Monolog\Level;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 use Core\Model;
+use Core\Models\UsersModel;
 
 class UserRegistration
 {
+    protected $usersModel;
+
+    public function __construct()
+    {
+        $this->usersModel = new UsersModel();
+    }
+
+
     public function registerUser($email, $password)
     {
 
@@ -29,15 +38,14 @@ class UserRegistration
                 return $erros;
             }
 
-                $model = new Model();
-                $user = $model->findUser($email);
+            $user = $this->usersModel->allUsers($email);
 
             if ($user) {
                 $erros["email"] = "Já existe uma conta cadastrada com este email. Por favor, tente com outro email.";
                 return $erros;
             } else {
-                $model = new Model();
-                $id = $model->registerUser($email, $password);
+                // $model = new Model();
+                $id = $this->usersModel->register($email, $password);
 
                 $_SESSION["user"] = [
                     "email" => $email,

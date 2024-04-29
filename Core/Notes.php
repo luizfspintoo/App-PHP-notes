@@ -87,8 +87,7 @@ class Notes
     public function getNoteToEdit($id)
     {
         try {
-            $model = new Model();
-            $result = $model->getToEdit($id);
+            $result = $this->notesModel->find($id);
             return $result;
         } catch (\Exception $e) {
             if($e->getMessage() == "DATABASE_ERROR") {
@@ -106,16 +105,14 @@ class Notes
         $log->pushHandler(new StreamHandler("../logs/notes.log", Level::Info));
 
         try {
-            $model = new Model();
-            $note = $model->getToEdit($id);
+            $note = $this->notesModel->find($id);
             autorize($note["user_id"] === $currentId);
             $erros = [];
             if (!Validator::string($body, 10, 255)) {
                 $erros["body"] = "Campo obrigatório, preencha acima de 10 caracteres";
             }
             if (empty($erros)) {
-                $model = new Model();
-                $model->changeNotes($id, $body);
+                $this->notesModel->updateNote($id, $body);
                 $log->info("nota atualizada com sucesso");
                 return true;
             }
@@ -138,11 +135,10 @@ class Notes
         $log->pushHandler(new StreamHandler("../logs/notes.log", Level::Info));
 
         try {
-            $model = new Model();
-            $note = $model->getToEdit($id);
+            $note = $this->notesModel->find($id);
             autorize($note["user_id"] === $currentId);
     
-            $noteDelete = $model->removeNote($id);
+            $noteDelete = $this->notesModel->deleteNote($id);
     
             if (! $noteDelete) {
                 return false;

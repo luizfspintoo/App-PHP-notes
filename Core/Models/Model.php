@@ -28,10 +28,13 @@ abstract class Model
 
   public function create($data)
   {
+    
     $fields = array_keys($data);
     $sql = "INSERT INTO {$this->table} (" . implode(",", $fields) . ") VALUES (:" . implode(",:", $fields) . ")";
+
     $this->query($sql, $data);
   }
+
   public function findAll()
   {
     $sql = "SELECT * FROM {$this->table}";
@@ -49,6 +52,20 @@ abstract class Model
     return $this->query($sql, [$field => $value])->fetchAll();
   }
 
+  public function update($id, $data)
+  {
+      $fields = array_keys($data);
+      $setClause = implode(" = :", $fields) . " = :" . end($fields);
+      $sql = "UPDATE {$this->table} SET {$setClause} WHERE id = :id";
+      return $this->query($sql, array_merge($data, ['id' => $id]));
+  }
+
+  public function delete($id)
+  {
+    $sql = "DELETE FROM {$this->table} WHERE id = :id";
+    return $this->query($sql, $id);
+  }
+  
   private function query($query, $parameters = [])
   {
     $this->statement = $this->connection->prepare($query);

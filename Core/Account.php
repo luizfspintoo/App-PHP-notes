@@ -7,14 +7,21 @@ use Monolog\Level;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 use Core\Model;
+use Core\Models\UsersModel;
 
 class Account
 {
+    private $usersModel;
+
+    public function __construct()
+    {
+        $this->usersModel = new UsersModel();
+    }
+
     public function getUserAccount($id)
     {
         try {
-            $model = new Model();
-            $result = $model->getUsers($id);
+            $result = $this->usersModel->find($id);
             return $result;
         } catch (\Exception $e) {
             if ($e->getMessage() == "DATABASE_ERROR") {
@@ -38,9 +45,7 @@ class Account
             if (!empty($erros)) {
                 return $erros;
             }
-
-            $model = new Model();
-            $model->updatePasswordUser($id, $password);
+            $this->usersModel->updateAccount($id, $password);
             $log->info("senha atualizada com sucesso");
             \redirect('/dashboard');
 
