@@ -4,8 +4,6 @@ namespace Core;
 
 use Core\Models\UsersModel;
 
-// use Core\Model;
-
 class Authenticator
 {
 

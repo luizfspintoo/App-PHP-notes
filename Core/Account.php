@@ -51,7 +51,6 @@ class Account
 
         } catch (\Exception $e) {
             if ($e->getMessage() == "DATABASE_ERROR") { 
-                //PAREI AQUI
                 $erros = "Hove um erro ao atualizar informações da conta";
                 $log->info("Erro ao atualizar informações da conta");
             } else {
