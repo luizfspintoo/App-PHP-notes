@@ -23,7 +23,7 @@ class UserRegistration
 
         // create a log channel
         $log = new Logger("registro de usuario ");
-        $log->pushHandler(new StreamHandler("../logs/register.log", Level::Warning));
+        $log->pushHandler(new StreamHandler("../logs/register.log", Level::Info));
 
         try {
             if (!Validator::email($email)) {
@@ -44,7 +44,6 @@ class UserRegistration
                 $erros["email"] = "Já existe uma conta cadastrada com este email. Por favor, tente com outro email.";
                 return $erros;
             } else {
-                // $model = new Model();
                 $id = $this->usersModel->register($email, $password);
 
                 $_SESSION["user"] = [
@@ -53,7 +52,7 @@ class UserRegistration
                 ];
 
                 
-                $log->warning("registrado com sucesso");
+                $log->info("registrado com sucesso");
                 redirect("/dashboard");
             }
         } catch (\Exception $e) {

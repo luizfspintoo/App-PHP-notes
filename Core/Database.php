@@ -38,7 +38,7 @@ class Database
             "password" => $_ENV['DB_PASSWORD']
         ];
 
-        if ($config["port"] !== 3306) {
+        if ($config["port"] !== '3306') {
             $log->error("Porta do banco de dados diferente da esperada {Class - Database}");
         }
 

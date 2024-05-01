@@ -33,6 +33,9 @@ abstract class Model
     $sql = "INSERT INTO {$this->table} (" . implode(",", $fields) . ") VALUES (:" . implode(",:", $fields) . ")";
 
     $this->query($sql, $data);
+
+    $lastInsertedId = $this->connection->lastInsertId();
+    return $lastInsertedId;
   }
 
   public function findAll()

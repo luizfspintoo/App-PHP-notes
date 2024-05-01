@@ -9,6 +9,15 @@ p.erro-message {
     color: rgb(255, 38, 38);
   }
 
+.mandatory {
+    color: red;
+    font-weight: 600;
+}
+
+.wrapper {
+    margin: 1rem 0;
+}
+
 .card {
     border: 1px solid #232323;
     display: flex;
@@ -22,12 +31,17 @@ p.erro-message {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 2rem 2rem 0 2rem;
-    background-color: #121214;
+    padding: 3rem 2rem 3rem 2rem;
+    background-color: #09090A;
     width: 100%;
     border-top-right-radius: 1.3rem;
     border-bottom-right-radius: 1.3rem;
     margin-top: 0;
+}
+
+.card header {
+    position: relative;
+    width: 50%;
 }
 
 .card header img {
@@ -35,21 +49,29 @@ p.erro-message {
     justify-content: center;
     align-items: center;
     padding-left: 1rem;
+    left: 4.5rem;
+    bottom: 0;
+    position: absolute;
 }
 
-.rating textarea, input {
-    width: 100%;
-    background-color: transparent;
-    border: 1px solid #232323;
-    border-radius: 0.8rem;
-    margin: 0.8rem 0rem;
-    padding: 0.5rem;
-    font-size: 17px;
-    color: white;
+textarea, input, button {
+    font-family: "DM Sans", sans-serif;
 }
+
+textarea, input {
+    background-color: #121214;
+    padding: 1.2rem 1.2rem;
+    width: 100%;
+    border-radius: 1rem;
+    color: white;
+    border: 2px solid #121214;
+    font-size: 1.6rem;
+    margin: 0.8rem 0;
+}
+
 
 textarea:focus, input:focus {
-    border: 1px solid #a68fdc;
+    border: 2px solid #a68fdc;
     outline: none;
   }
 
@@ -69,6 +91,23 @@ textarea:focus, input:focus {
 }
 
 
+@media (max-width: 880px) {
+    .card {
+      flex-direction: column;
+    }
 
+    .card header {
+        position: relative;
+    }
 
+    .card header img {
+        position: relative;
+        margin-bottom: -9rem;
+        left: 10rem;
+    }
+
+    .card main {
+        border-radius: 1.3rem;
+    }
+  }
 

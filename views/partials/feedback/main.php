@@ -12,17 +12,27 @@
         <div class="rating">
             <form action="/feedback" method="POST">
 
-                <input type="text" name="name" id="name" placeholder="Digite seu nome" maxlength="160"><br>
-                <?php if (isset($erros["name"])) : ?>
-                    <p class="erro-message"><?= $erros["name"]; ?></p>
-                <?php endif; ?>
+                <div class="wrapper">
+                    <label for="name">Nome <span class="mandatory">*</span></label>
+                    <input type="text" name="name" id="name" placeholder="Digite seu nome" maxlength="160" value="<?= $name; ?>"><br>
+                    <?php if (isset($erros["name"])) : ?>
+                        <p class="erro-message"><?= $erros["name"]; ?></p>
+                    <?php endif; ?>
+                </div>
+                
+                <div class="wrapper">
+                    <label for="email">Email <span class="mandatory">*</span></label>
+                    <input type="text" name="email" id="email" placeholder="Digite seu email" maxlength="160" value="<?= $_SESSION["user"]["email"]; ?>" disabled><br>
+                    <input type="hidden" name="email" value="<?= $_SESSION["user"]["email"]; ?>">
+                </div>
 
-                <input type="text" name="email" id="email" placeholder="Digite seu email" maxlength="160" value="<?= $_SESSION["user"]["email"]; ?>"><br>
-
-                <textarea name="body" id="body" rows="4" placeholder="Escreva o seu Feedback aqui 🚀" maxlength="160"></textarea>
-                <?php if (isset($erros["body"])) : ?>
-                    <p class="erro-message"><?= $erros["body"]; ?></p>
-                <?php endif; ?>
+                <div class="wrapper">
+                    <label for="body">Feedback <span class="mandatory">*</span></label>
+                    <textarea name="body" id="body" rows="4" placeholder="Escreva o seu Feedback aqui 🚀" maxlength="160"><?= $body ?></textarea>
+                    <?php if (isset($erros["body"])) : ?>
+                        <p class="erro-message"><?= $erros["body"]; ?></p>
+                    <?php endif; ?>
+                </div>
 
                 <?php if (isset($erros["erro"])) : ?>
                     <p class="erro-message"><?= $erros["erro"]; ?></p>
