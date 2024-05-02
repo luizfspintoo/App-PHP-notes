@@ -42,8 +42,9 @@ class Feedback
 
             $this->feedbackModel->insertFeedback($name, $email, $body, $currentId);
             $body = $this->mailTemplate($name, $email, $body, date("d/m/Y"));
+            $subject = "Feedback da plataforma NoteSync";
 
-            App::resolve(EmailProvider::class)->sendEmail($email, $name, $body);
+            App::resolve(EmailProvider::class)->sendEmail($email, $name, $body, $subject);
             $log->info("Feedback enviado com sucesso");
 
             redirect("/dashboard");

@@ -22,10 +22,10 @@ class EmailProvider
     $this->mail->CharSet = 'UTF-8';
   }
 
-  public function sendEmail($email, $name, $body)
+  public function sendEmail($email, $name, $body, $subject)
   {
     $this->mail->setFrom($email, $name);
-    $this->mail->Subject = 'Feedback da plataforma NoteSync';
+    $this->mail->Subject = $subject;
     $this->mail->Body = $body;
     $this->mail->send();
   }
