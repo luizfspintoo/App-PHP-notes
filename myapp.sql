@@ -19,6 +19,8 @@ CREATE TABLE `notes` (
 
 CREATE TABLE `feedback` (
 	`id` INT(10) NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(255) NOT NULL,
+	`email` VARCHAR(255) NOT NULL,
 	`body` VARCHAR(255) NOT NULL,
 	`user_id` INT(10) NOT NULL,
 	PRIMARY KEY (`id`),
