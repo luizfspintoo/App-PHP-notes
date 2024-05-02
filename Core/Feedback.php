@@ -37,7 +37,14 @@ class Feedback
             }
 
             if (!empty($erros)) {
-                return $erros;
+                Session::flash("erros", $erros);
+                Session::flash("old", [
+                    "name" => $name,
+                    "body" => $body,
+                ]);
+
+                redirect("/feedback");
+                return;
             }
 
             $this->feedbackModel->insertFeedback($name, $email, $body, $currentId);
@@ -55,15 +62,17 @@ class Feedback
                 $erros["erro"] = "Erro desconhecido";
             }
             $log->error($e);
+
+            Session::flash("erros", $erros);
+            Session::flash("old", [
+                "name" => $name,
+                "body" => $body,
+            ]);
+
+            redirect("/feedback");
         }
 
-        Session::flash("erros", $erros);
-        Session::flash("old", [
-            "name" => $name,
-            "body" => $body,
-        ]);
 
-        redirect("/feedback");
     }
 
     private function mailTemplate($name, $email, $body, $date)
