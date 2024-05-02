@@ -3,10 +3,6 @@
 namespace Core;
 
 use Core\Validator;
-use Monolog\Level;
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
-use Core\Model;
 use Core\Models\UsersModel;
 
 class Account
@@ -35,8 +31,7 @@ class Account
 
     public function UpdateAccount($id, $password)
     {
-        $log = new Logger("conta usuario ");
-        $log->pushHandler(new StreamHandler("../logs/account.log", Level::Info));
+
         try {
             $erros = [];
             if (!Validator::string($password, 10, 50)) {
@@ -46,16 +41,16 @@ class Account
                 return $erros;
             }
             $this->usersModel->updateAccount($id, $password);
-            $log->info("senha atualizada com sucesso");
+            Logger::info("Senha atualizada com sucesso", ["id" => $id]);
             \redirect('/dashboard');
 
         } catch (\Exception $e) {
-            if ($e->getMessage() == "DATABASE_ERROR") { 
+            if ($e->getMessage() == "DATABASE_ERROR") {
                 $erros = "Hove um erro ao atualizar informações da conta";
-                $log->info("Erro ao atualizar informações da conta");
             } else {
                 $erros = "Erro desconhecido";
             }
+            Logger::error("Erro ao atualizar informações da conta", ["id" => $id, "error" => $e->getMessage()]);
             return $erros;
         }
     }

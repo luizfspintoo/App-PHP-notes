@@ -2,10 +2,6 @@
 
 namespace Core;
 
-use Monolog\Level;
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
-use Core\Model;
 use Core\Models\UsersModel;
 
 class UserRegistration
@@ -20,10 +16,6 @@ class UserRegistration
 
     public function registerUser($email, $password)
     {
-
-        // create a log channel
-        $log = new Logger("registro de usuario ");
-        $log->pushHandler(new StreamHandler("../logs/register.log", Level::Info));
 
         try {
             if (!Validator::email($email)) {
@@ -42,6 +34,7 @@ class UserRegistration
 
             if ($user) {
                 $erros["email"] = "Já existe uma conta cadastrada com este email. Por favor, tente com outro email.";
+                Logger::warn("Tentativa de registro com email já cadastrado");
                 return $erros;
             } else {
                 $id = $this->usersModel->register($email, $password);
@@ -52,16 +45,16 @@ class UserRegistration
                 ];
 
                 
-                $log->info("registrado com sucesso");
+                Logger::info("registrado com sucesso");
                 redirect("/dashboard");
             }
         } catch (\Exception $e) {
             if ($e->getMessage() == "DATABASE_ERROR") {
                 $erros["password"] = "Houve um erro ao registrar usuário";
-                $log->error("erro a registrar {Class - UserRegistration}");
             } else {
                 $erros["password"] = "Erro desconhecido";
             }
+            Logger::error("Erro a registrar", ["error" => $e->getMessage()]);
             return $erros;
         }
     }

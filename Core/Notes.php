@@ -5,9 +5,6 @@ namespace Core;
 use Core\Models\NotesModel;
 use Core\Validator;
 use Monolog\Level;
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
-use Core\Model;
 
 class Notes
 {
@@ -25,9 +22,6 @@ class Notes
     public function createNote($body, $currentId)
     {
 
-        $log = new Logger("registro de notas ");
-        $log->pushHandler(new StreamHandler("../logs/notes.log", Level::Info));
-
         try {
             $erros = [];
             if (!Validator::string($body, 10, 255)) {
@@ -39,17 +33,17 @@ class Notes
                     "user_id" => $currentId
                 ]);
 
-                $log->info("nota criada com sucesso");
+                Logger::info("Nota criada com sucesso");
                 return true; 
             }
             return $erros; 
         } catch (\Exception $e) {
             if($e->getMessage() == "DATABASE_ERROR") {
                 $erros["body"] = "Houve um erro ao criar nota";
-                $log->error("Houve um erro ao criar nota {Class - Notes}");
             } else {
                 $erros["body"] = "Erro desconhecido";
             }
+            Logger::error("Erro ao criar nota", ["error" => $e->getMessage()]);
             return $erros;
         }
     }
@@ -101,9 +95,6 @@ class Notes
 
     public function updateNote($id, $body, $currentId)
     {
-        $log = new Logger("Atualização da nota ");
-        $log->pushHandler(new StreamHandler("../logs/notes.log", Level::Info));
-
         try {
             $note = $this->notesModel->find($id);
             autorize($note["user_id"] === $currentId);
@@ -113,27 +104,23 @@ class Notes
             }
             if (empty($erros)) {
                 $this->notesModel->updateNote($id, $body);
-                $log->info("nota atualizada com sucesso");
+                Logger::info("nota atualizada com sucesso");
                 return true;
             }
             return $erros;
         } catch (\Exception $e) {
             if($e->getMessage() == "DATABASE_ERROR") {
                 $erros["body"] = "Houve um erro ao atualizar nota";
-                $log->error("Houve um erro ao atualizar nota {Class - Notes}");
             } else {
                 $erros = "Erro desconhecido"; 
             }
+            Logger::error("Erro ao atualizar nota", ["error" => $e->getMessage()]);
             return $erros;
         }
     }
     
     public function deleteNoteById($id, $currentId)
     {
-
-        $log = new Logger("Deletar nota ");
-        $log->pushHandler(new StreamHandler("../logs/notes.log", Level::Info));
-
         try {
             $note = $this->notesModel->find($id);
             autorize($note["user_id"] === $currentId);
@@ -144,15 +131,15 @@ class Notes
                 return false;
             }
     
-            $log->info("nota deletada com sucesso");
+            Logger::info("nota deletada com sucesso");
             redirect("/notes");
         } catch (\Exception $e) {
             if($e->getMessage() == "DATABASE_ERROR") {
                 $erros["body"] = "Houve um erro ao deletar nota";
-                $log->info("Houve um erro ao deletar nota {Class - Notes}");
             } else {
                 $erros["body"] = "Erro desconhecido";
             }
+            Logger::error("Erro ao deletar nota", ["error" => $e->getMessage()]);
         }
     }
 }

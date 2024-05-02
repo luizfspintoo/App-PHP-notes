@@ -3,11 +3,7 @@
 namespace Core;
 
 use Core\Models\FeedbackModel;
-use Dotenv\Dotenv;
 use Core\Validator;
-use Monolog\Level;
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
 
 class Feedback
 {
@@ -20,12 +16,6 @@ class Feedback
 
     public function createFeedback($name, $email, $body, $currentId)
     {
-        $log = new Logger("Feedback usuario ");
-        $log->pushHandler(new StreamHandler("../logs/feedback.log", Level::Info));
-
-        $dotenv = Dotenv::createImmutable(__DIR__ . '/../');
-        $dotenv->load();
-
         try {
             $erros = [];
             if (!Validator::string($name, 3, 50)) {
@@ -52,7 +42,7 @@ class Feedback
             $subject = "Feedback da plataforma NoteSync";
 
             App::resolve(EmailProvider::class)->sendEmail($email, $name, $body, $subject);
-            $log->info("Feedback enviado com sucesso");
+            Logger::info("Feedback enviado com sucesso");
 
             redirect("/feedback");
         } catch (\Exception $e) {
@@ -61,7 +51,7 @@ class Feedback
             } else {
                 $erros["erro"] = "Erro desconhecido";
             }
-            $log->error($e);
+            Logger::error("Erro ao enviar o feedback", ["error" => $e->getMessage()]);
 
             Session::flash("erros", $erros);
             Session::flash("old", [
