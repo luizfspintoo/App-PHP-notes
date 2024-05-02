@@ -47,7 +47,7 @@ class Feedback
             App::resolve(EmailProvider::class)->sendEmail($email, $name, $body, $subject);
             $log->info("Feedback enviado com sucesso");
 
-            redirect("/dashboard");
+            redirect("/feedback");
         } catch (\Exception $e) {
             if ($e->getMessage() == "DATABASE_ERROR") {
                 $erros["erro"] = "Houve um erro ao enviar feedback";
@@ -55,8 +55,15 @@ class Feedback
                 $erros["erro"] = "Erro desconhecido";
             }
             $log->error($e);
-            return $erros;
         }
+
+        Session::flash("erros", $erros);
+        Session::flash("old", [
+            "name" => $name,
+            "body" => $body,
+        ]);
+
+        redirect("/feedback");
     }
 
     private function mailTemplate($name, $email, $body, $date)
