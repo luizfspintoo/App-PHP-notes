@@ -39,6 +39,7 @@ class Session
     {
         static::flush();
         session_destroy();
+        Logger::debug("Sessão destruída");
 
         $parameters = session_get_cookie_params();
         setcookie("PHPSESSID", "", time() - 3600, $parameters["path"], $parameters["domain"], $parameters["secure"], $parameters["httponly"]);
