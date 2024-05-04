@@ -119,4 +119,7 @@ textarea:focus {
         width: 100%;
     }
 
+    .my-account button {
+        width: 50%;
+    }
 }

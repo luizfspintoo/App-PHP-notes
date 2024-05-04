@@ -5,7 +5,7 @@ input {
     color: white;
     border: 1px solid #121214;
     font-size: 1.6rem;
-    width: 600px;
+    width: 100%;
   }
 
   input:focus {
@@ -15,8 +15,8 @@ input {
 
   button {
     border: 0;
-    padding: 1.2rem 2rem;
-    width: 100%;
+    padding: 1.2rem 2.5rem;
+    width: 190px;
     background-color: #7b4ee4;
     color: white;
     border-radius: 1rem;
@@ -33,6 +33,7 @@ input {
 
 .input-wrapper {
   position: relative;
+  width: 100%;
 }
 .input-wrapper ion-icon {
   position: absolute;
@@ -44,10 +45,7 @@ input {
   display: flex;
   align-items: center;
   gap: 5rem;
-}
-
-.header {
-  flex: auto
+  padding: 2rem;
 }
 
 .header a {
@@ -93,4 +91,20 @@ input {
 
 .note a {
   text-decoration: none;
+}
+
+@media (max-width: 845px) {
+  .header {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .input-wrapper {
+    width: 100%;
+  }
+
+  .cards img {
+    margin: 0 auto;
+    width: 90%;
+  }
 }
