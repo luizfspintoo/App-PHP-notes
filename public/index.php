@@ -1,9 +1,14 @@
 <?php
 
 use Core\Session;
+use Dotenv\Dotenv;
 
 const BASE_PATH = __DIR__ . '/../';
 require BASE_PATH . "vendor/autoload.php";
+
+// Carregar variáveis do .env
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv->load();
 
 session_start();
 
