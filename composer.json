@@ -16,5 +16,17 @@
             "Core\\": "Core/",
             "Http\\": "Http/"
         }
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.34"
+    },
+    "scripts": {
+        "test": "pest",
+        "test-coverage": "pest --coverage"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
     }
 }
