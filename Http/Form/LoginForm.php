@@ -12,11 +12,11 @@ class LoginForm
     public function validate($email, $password)
     {
         if (!Validator::email($email)) {
-            $erros["email"] = "O formato do email é inválido";
+            $this->erros["email"] = "O formato do email é inválido";
         }
 
         if (!Validator::string($password)) {
-            $erros["password"] = "O formato da senha inválida";
+            $this->erros["password"] = "O formato da senha inválida";
         }
 
         return empty($this->erros);
