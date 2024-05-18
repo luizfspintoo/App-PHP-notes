@@ -46,7 +46,12 @@ abstract class Model
 
   public function find($id)
   {
-    return $this->findBy($this->primaryKey, $id)[0];
+    $result = $this->findBy($this->primaryKey, $id);
+    if (count($result) == 0) {
+      return null;
+    }
+
+    return $result[0];
   }
 
   public function findBy($field, $value)

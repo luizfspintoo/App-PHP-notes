@@ -1,5 +1,5 @@
 -- tabela do banco de dados (MySQL)
-CREATE TABLE `users` (
+CREATE TABLE IF NOT EXISTS  `users` ( 
 	`id` INT(10) NOT NULL AUTO_INCREMENT,
 	`password` VARCHAR(100) NOT NULL,
 	`email` VARCHAR(100) NOT NULL,
@@ -8,7 +8,7 @@ CREATE TABLE `users` (
 );
 
 
-CREATE TABLE `notes` (
+CREATE TABLE IF NOT EXISTS `notes` (
 	`id` INT(10) NOT NULL AUTO_INCREMENT,
 	`body` VARCHAR(255) NOT NULL,
 	`user_id` INT(10) NOT NULL,
@@ -17,7 +17,7 @@ CREATE TABLE `notes` (
 );
 
 
-CREATE TABLE `feedback` (
+CREATE TABLE IF NOT EXISTS `feedback` (
 	`id` INT(10) NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(255) NOT NULL,
 	`email` VARCHAR(255) NOT NULL,
