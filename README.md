@@ -61,7 +61,7 @@ composer test
 ```
 
 #### Rodando os testes com cobertura
-
+Para rodar os testes com cobertura, você deve ter configurado o [Xdebug](https://xdebug.org/docs/install/) em seu ambiente.
 1. Rode o comando no terminal para executar os testes com cobertura:
 
 ```
