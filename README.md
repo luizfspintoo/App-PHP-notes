@@ -47,6 +47,11 @@ php -S localhost:8888 -t public
 
 ### Testes 🧪
 
+#### Configuração
+
+Para rodar os testes, você deve configurar o arquivo `.env.test` com as credenciais do banco de dados de teste.
+Copie o arquivo `.env.example` para `.env.test` e configure as credenciais do banco de dados de teste.
+
 #### Rodando os testes
 
 Rode o comando no terminal para executar os testes:
